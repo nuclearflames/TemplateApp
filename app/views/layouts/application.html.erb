@@ -2,14 +2,34 @@
 <html>
 <head>
   <title>AdultApp</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <%= stylesheet_link_tag "application.css", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-<p><%= notice %></p>
-<p><%= alert %></p>
-<%= yield %>
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<div class="span12" id="header">
+				<p>Header</p>
+				<% if notice %><p><%= notice %></p><% end %>
+				<% if alert %><p><%= alert %></p><% end %>
+			</div>
+		</div>
+		<div class="row-fluid">
+			<div class="span2">
+				<p>Sidebar</p>
+			</div>
+			<div class="span10">
+				<%= yield %>
+			</div>
+		</div>
+		<div class="row-fluid">
+			<div class="span12">
+				<p>Footer</p>
+			</div>
+		</div>
+	</div>
 
 </body>
 </html>
