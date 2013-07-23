@@ -9,7 +9,7 @@ body {
 }
 
 .yield {
-    background-color: $goldfish;
+    background-color: $white;
     text-align: center;
 }
 
@@ -57,12 +57,17 @@ body {
 .information {
     text-align: center;
     border-top: 2px solid;
-    background-color: $aoi;
+    background-color: $white;
 }
 
 .registerBox {
     border: 1px solid black;
     background-color: $storm;
+}
+
+.errorBox {
+    border: 1px solid black;
+    background-color: $error;    
 }
 
 .slideshow {

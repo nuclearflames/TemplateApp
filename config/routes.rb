@@ -3,6 +3,11 @@ AdultApp::Application.routes.draw do
   devise_for :users
   devise_for :admins
 
+  resources :locations
+  resources :forums
+  resources :topics
+  resources :posts
+
   get "root/home"
 
   # The priority is based upon order of creation:
@@ -64,5 +69,12 @@ AdultApp::Application.routes.draw do
 
   match "/" => "root#home"
   match "/home" => "root#userhome"
+  match "/search" => "locations#index"
+  match "/search/edit" => "locations#edit"
+  match "/search/new" => "locations#new"
+  match "/search/show" => "locations#show", :as => :user
+
+  #place at end to last search profiles
+  match "/:alias" => "root#show#:alias"
 
 end

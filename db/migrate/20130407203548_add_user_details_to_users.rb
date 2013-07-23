@@ -4,6 +4,6 @@ class AddUserDetailsToUsers < ActiveRecord::Migration
     add_column :users, :surname, :string
     add_column :users, :aboutme, :string
     add_column :users, :alias, :string
-    add_column :users, :birtday, :date
+    add_column :users, :birthday, :date
   end
 end

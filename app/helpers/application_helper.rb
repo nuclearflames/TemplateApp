@@ -17,4 +17,20 @@ module ApplicationHelper
 	def about_us_text
 		return "About US"
 	end
+
+	def get_user(id)
+		return User.find(id)
+	end
+
+	def get_topic(id)
+		return Topic.find(id)
+	end
+
+	def get_post(id)
+		return Post.find(id)
+	end
+
+	def get_forum(id)
+		return Forum.find(id)
+	end
 end

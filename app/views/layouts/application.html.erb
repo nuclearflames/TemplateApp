@@ -4,7 +4,6 @@
   <title>AdultApp</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <%= stylesheet_link_tag "application.css", :media => "all" %>
-  <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -16,29 +15,29 @@
                         <p><%=link_to "Home", "/" %></p>
                     </div>
                     <div class="span2">
-                        <p><%=link_to "Photos", "photos" %></p>
+                        <p><%=link_to "Photos", "/photos" %></p>
                     </div>
                     <div class="span2">
-                        <p><%=link_to "Forum", "forum" %></p>
+                        <p><%=link_to "Forum", "/forums" %></p>
                     </div>
                     <div class="span2">
-                        <p><%=link_to "Search", "search" %></p>
+                        <p><%=link_to "Search", "/search" %></p>
                     </div>
                     <div class="span2">
-                        <p><%=link_to "Help", "help" %></p>
+                        <p><%=link_to "Help", "/help" %></p>
                     </div>
                     <div class="span2">
                         <% if user_signed_in? %>
                             <div class="row">
                                 <div class="span1">
-                                    <p><%=link_to "Edit", "users/edit" %></p>
+                                    <p><%=link_to "Edit Profile", "/users/edit" %></p>
                                 </div>
                                 <div class="span1">
-                                    <p><%=link_to "Logout", "users/sign_out", :method => :delete %></p>
+                                    <p><%=link_to "Logout", "/users/sign_out", :method => :delete %></p>
                                 </div>
                             </div>
                         <% else %>
-                            <p><%=link_to "Login", "users/sign_in" %></p>
+                            <p><%=link_to "Login", "/users/sign_in" %></p>
                         <% end %>
                     </div>
                 </div>
@@ -52,9 +51,7 @@
                 </div>
                 <div class="row yield">
                     <div class="span12">
-                        <div class="row">
-                            <%= yield %>
-                        </div>
+                        <%= yield %>
                     </div>
                 </div>
                 <div class="row information">
@@ -66,5 +63,9 @@
         </div>
     </div>
 
+    <script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB3gx_9qaR1qczUh-vHg35EhzDYTtfwfNs&sensor=false">
+    </script>
+    <%= javascript_include_tag "application" %>
 </body>
 </html>

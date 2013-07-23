@@ -1,0 +1,44 @@
+<div class="row forumTitle">
+    <div class="span12">
+        <h1>All of our forums</h1>
+        <p>Here you can post and create new content to our forums</p>
+    </div>
+</div>
+<div class="row forum forumHeader">
+    <div class="span12">
+        <div class="row">
+            <div class="span6">
+                <h3>About Fourm:</h3>
+            </div>
+            <div class="span3">
+                <h3>Thread Count:</h3>
+            </div>
+            <div class="span3">
+                <h3>Owner:</h3>
+            </div>
+        </div>
+    </div>
+</div>
+<% @forums.each do |f|%>
+    <div class="row forum">
+        <div class="span12">
+            <div class="row">
+                <div class="span6">
+                    <h3><%= link_to f.title, topic_path(f.id) %></h3>
+                    <p><%= f.description %></p>
+                </div>
+                <div class="span3">
+                    <p>Count:</p>
+                </div>
+                <div class="span3">
+                    <p><%= User.find(f.user_id).alias %></p>
+                </div>
+            </div>
+        </div>
+    </div>
+<% end %>
+<div class="row forumFooter">
+    <div class="span12">
+        <p><%= link_to "Create new forum", new_forum_path %></p>
+    </div>
+</div>

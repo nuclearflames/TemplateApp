@@ -11,13 +11,55 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130701193408) do
+ActiveRecord::Schema.define(:version => 20130720100713) do
 
   create_table "admins", :force => true do |t|
     t.string   "email"
     t.string   "encrypted_password"
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
+  end
+
+  create_table "forums", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "name"
+    t.string   "description"
+    t.string   "title"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "locations", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "location"
+    t.string   "city"
+    t.string   "town"
+    t.string   "street"
+    t.integer  "houseno"
+    t.string   "postcode"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.float    "lat"
+    t.float    "lng"
+  end
+
+  create_table "posts", :force => true do |t|
+    t.integer  "topic_id"
+    t.integer  "user_id"
+    t.string   "title"
+    t.string   "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "topics", :force => true do |t|
+    t.integer  "forum_id"
+    t.integer  "user_id"
+    t.string   "title"
+    t.string   "description"
+    t.string   "category"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "users", :force => true do |t|
@@ -37,7 +79,7 @@ ActiveRecord::Schema.define(:version => 20130701193408) do
     t.string   "surname"
     t.string   "aboutme"
     t.string   "alias"
-    t.date     "birtday"
+    t.date     "birthday"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
