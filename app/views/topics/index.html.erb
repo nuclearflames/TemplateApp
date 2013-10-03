@@ -1,18 +1,18 @@
 <div class="row">
-    <div class="span12">
+    <div class="col-md-12">
         <h1>Topics</h1>
     </div>
 </div>
 <div class="row">
-    <div class="span12">
+    <div class="col-md-12">
         <div class="row">
-            <div class="span6">
+            <div class="col-md-6">
                 <p>Title:</p>
             </div>
-            <div class="span3">
+            <div class="col-md-3">
                 <p>Topic creator:</p>
             </div>
-            <div class="span3">
+            <div class="col-md-3">
                 <p>Creation date:</p>
             </div>
         </div>
@@ -20,23 +20,23 @@
 </div>
 <div class="row">
     <% @topics.each do |f|%>
-        <div class="span12 profile">
+        <div class="col-md-12 profile">
             <div class="row">
-                <div class="span6">
-                    <p><%= link_to f.title, posts_path %></p>
+                <div class="col-md-6">
+                    <p><%= link_to f.title, post_path(f) %></p>
                     <p><%= f.description %></p>
                 </div>
-                <div class="span3">
+                <div class="col-md-3">
                     <p><%= get_user(f.user_id).alias %></p>
                 </div>
-                <div class="span3">
+                <div class="col-md-3">
                     <p><%= f.created_at %></p>
                 </div>
             </div>
         </div>
     <% end %>
     <div class="row">
-        <div class="span12">
+        <div class="col-md-12">
             <%= link_to "Create new topic", new_topic_path(params[:format]) %>
         </div>
     </div>

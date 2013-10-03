@@ -1,0 +1,29 @@
+<div class="row forumTitle">
+    <div class="col-md-12">
+        <h1>Showing <%= get_user(current_user).alias %>'s photo</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <p><%= link_to "Create new photo", new_photo_path(params[:id]) %></p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-3">
+        <div class="row">
+            <div class="col-md-12">
+                <h3>Title:</h3>
+                <p><%= @photo.title %></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h3>About:</h3>
+                <p><%= @photo.description %></p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-9">
+        <p><%= image_tag @photo.picture %></p>
+    </div>
+</div>

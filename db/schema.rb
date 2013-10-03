@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130720100713) do
+ActiveRecord::Schema.define(:version => 20130921125312) do
 
   create_table "admins", :force => true do |t|
     t.string   "email"
@@ -41,6 +41,34 @@ ActiveRecord::Schema.define(:version => 20130720100713) do
     t.datetime "updated_at", :null => false
     t.float    "lat"
     t.float    "lng"
+  end
+
+  create_table "messages", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "recipient_id"
+    t.string   "title"
+    t.string   "content"
+    t.string   "attachment_file_name"
+    t.string   "attachment_content_type"
+    t.integer  "attachment_file_size"
+    t.datetime "attachment_updated_at"
+    t.boolean  "deleted"
+    t.boolean  "read"
+    t.datetime "created_at",              :null => false
+    t.datetime "updated_at",              :null => false
+  end
+
+  create_table "photos", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "title"
+    t.string   "description"
+    t.string   "type"
+    t.string   "picture_file_name"
+    t.string   "picture_content_type"
+    t.integer  "picture_file_size"
+    t.datetime "picture_updated_at"
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
   end
 
   create_table "posts", :force => true do |t|
@@ -80,6 +108,10 @@ ActiveRecord::Schema.define(:version => 20130720100713) do
     t.string   "aboutme"
     t.string   "alias"
     t.date     "birthday"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

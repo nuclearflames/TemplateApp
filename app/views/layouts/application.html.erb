@@ -7,33 +7,35 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+    <span class="glyphicon glyphicon-search"></span>
+
     <div class="container main">
         <div class="row">
-            <div class="span12 content">
+            <div class="col-md-12 content">
                 <div class="row sidebar">
-                    <div class="span2">
+                    <div class="col-md-2">
                         <p><%=link_to "Home", "/" %></p>
                     </div>
-                    <div class="span2">
+                    <div class="col-md-2">
                         <p><%=link_to "Photos", "/photos" %></p>
                     </div>
-                    <div class="span2">
+                    <div class="col-md-2">
                         <p><%=link_to "Forum", "/forums" %></p>
                     </div>
-                    <div class="span2">
+                    <div class="col-md-2">
                         <p><%=link_to "Search", "/search" %></p>
                     </div>
-                    <div class="span2">
-                        <p><%=link_to "Help", "/help" %></p>
+                    <div class="col-md-2">
+                        <p><%=link_to "Mailbox", "/messages" %></p>
                     </div>
-                    <div class="span2">
+                    <div class="col-md-2">
                         <% if user_signed_in? %>
                             <div class="row">
-                                <div class="span1">
-                                    <p><%=link_to "Edit Profile", "/users/edit" %></p>
+                                <div class="col-md-8">
+                                    <p><%= link_to "View Profile", "/" + current_user.alias %></p>
                                 </div>
-                                <div class="span1">
-                                    <p><%=link_to "Logout", "/users/sign_out", :method => :delete %></p>
+                                <div class="col-md-4">
+                                    <p><%= link_to "Logout", "/users/sign_out", :method => :delete %></p>
                                 </div>
                             </div>
                         <% else %>
@@ -42,20 +44,20 @@
                     </div>
                 </div>
                 <div class="row title">
-                    <div class="span8">
+                    <div class="col-md-6">
                         <h1><%= global_website_name_linked %></h1>
                     </div>
-                    <div class="span4 slideshow">
+                    <div class="col-md-6 slideshow">
                         <p>Slideshow</p>
                     </div>
                 </div>
                 <div class="row yield">
-                    <div class="span12">
+                    <div class="col-md-12">
                         <%= yield %>
                     </div>
                 </div>
                 <div class="row information">
-                    <div class="span12">
+                    <div class="col-md-12">
                         <p>Copyright stuff</p>
                     </div>
                 </div>

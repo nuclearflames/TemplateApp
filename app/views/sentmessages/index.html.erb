@@ -1,0 +1,41 @@
+<div class="row">
+    <div class="col-md-12">
+        <h1>Your Sent messages</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="row">
+            <div class="col-md-2">
+                <h3>To:</h3>
+            </div>
+            <div class="col-md-10 message-content">
+                <h3>Message:</h3>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <% @sentmessages.each do |f|%>
+        <div class="col-md-12 message">
+            <div class="row">
+                <div class="col-md-2">
+                    <p><%= get_user(f.user_id).alias %></p>
+                </div>
+                <div class="col-md-10 message-content">
+                    <p><%= link_to f.title, messages_path %></p>
+                    <p><%= f.content %></p>
+                    <p><%= link_to "Delete", message_path(f), method: :delete, data: {:confirm => "are you sure?"} %></p>
+                    <p><%= f.created_at %></p>
+                </div>
+            </div>
+        </div>
+    <% end %>
+    <div class="row">
+        <div class="col-md-12">
+            <%= paginate @sentmessages %>
+            <%= link_to "View recieved messages", messages_path %>
+            <%= link_to "Send a new message", new_message_path(params[:format]) %>
+        </div>
+    </div>
+</div>

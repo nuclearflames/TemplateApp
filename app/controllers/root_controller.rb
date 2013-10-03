@@ -8,7 +8,6 @@ class RootController < ApplicationController
   end
 
   def userhome
-     @user = User.find(current_user)
   end
 
   def show

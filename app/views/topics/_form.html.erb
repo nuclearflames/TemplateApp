@@ -1,25 +1,25 @@
 <div class="row">
-    <div class="span12">
+    <div class="col-md-12">
         <%= form_for @topic do |f| %>
             <%= f.hidden_field(:forum_id, :value => params[:format].to_i) %>
             <div class="row">
-                <div class="span6">
+                <div class="col-md-12">
                     <%= f.label :title %>
                 </div>
-                <div class="span6">
+                <div class="col-md-12">
                     <%= f.text_field :title %>
                 </div>
             </div>
             <div class="row">
-                <div class="span6">
+                <div class="col-md-12">
                     <%= f.label :description %>
                 </div>
-                <div class="span6">
+                <div class="col-md-12">
                     <%= f.text_field :description %>
                 </div>
             </div>
             <div class="row">
-                <div class="span12">
+                <div class="col-md-12">
                     <%= f.submit %>
                 </div>
             </div>

@@ -4,4 +4,5 @@ class Topic < ActiveRecord::Base
     has_many :posts
 
     attr_accessible :title, :description, :user_id, :id, :forum_id
+    paginates_per 10
 end

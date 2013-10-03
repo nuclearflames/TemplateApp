@@ -1,6 +1,9 @@
 class User < ActiveRecord::Base
   has_one :location, dependent: :destroy
   has_many :forums, dependent: :destroy
+  has_many :topics, dependent: :destroy
+  has_many :posts, dependent: :destroy
+  has_many :photos, dependent: :destroy
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
@@ -8,7 +11,10 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :forename, :surname, :aboutme, :alias, :birthday
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :forename, :surname, :aboutme, :alias, :birthday, :avatar
+  
+  has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"
+
   # attr_accessible :title, :body
 
   validates_presence_of :alias

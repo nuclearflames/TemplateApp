@@ -1,0 +1,44 @@
+<div class="row">
+    <div class="col-md-12">
+        <%= form_for @message do |f| %>
+            <div class="row">
+                <div class="col-md-12">
+                    <%= f.label :title %>
+                </div>
+                <div class="col-md-12">
+                    <%= f.text_field :title %>
+                </div>
+            </div>
+            <% if params[:alias] %>
+                <div class="row">
+                    <div class="col-md-12">
+                        <%= f.label :recipient %>
+                    </div>
+                    <div class="col-md-12">
+                        <%= f.text_field :recipient_id, :value => params[:alias], :readonly => true %>
+                    </div>
+                </div>
+            <% else %>
+                <div class="col-md-12">
+                    <%= f.label :recipient %>
+                </div>
+                <div class="col-md-12">
+                    <%= f.text_field :recipient_id %>
+                </div>
+            <% end %>
+            <div class="row">
+                <div class="col-md-12">
+                    <%= f.label :content %>
+                </div>
+                <div class="col-md-12">
+                    <%= f.text_area :content %>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <%= f.submit %>
+                </div>
+            </div>
+        <% end %>
+    </div>
+</div>

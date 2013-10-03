@@ -3,7 +3,7 @@ ul {
 }
 .yield {
     form {
-        .row:nth-child(even) {
+        .row-fluid:nth-child(even) {
         	background-color: $mist;
         }
     }

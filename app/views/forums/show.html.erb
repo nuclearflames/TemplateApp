@@ -1,55 +1,58 @@
-<div class="row">
-    <div class="span12">
-        <%= form_for @forum do |f| %>
-            <div class="row">
-                <div class="span12">
-                    <h1><%= @forum.title %></h1>
-                </div>
+<div class="row forumTitle">
+    <div class="col-md-12">
+        <div class="row forumTitle">
+            <div class="col-md-12">
+                <h1>All the topics for forum: <%= get_forum(params[:id]).title %></h1>
+                <p>Forum Description:<%= get_forum(params[:id]).description %></p>
             </div>
-            <div class="row">
-                <div class="span12">
-                    <h4><%= @forum.description %></h4>
-                </div>
-            </div>
-        <% end %>
-    </div>
-</div>
-<div class="row">
-    <div class="span12">
-        <p>Topics:</p>
-    </div>
-</div>
-<div class="row">
-    <div class="span6">
-        <h3>Title:</h3>
-    </div>
-    <div class="span3">
-        <h3>Owner:</h3>
-    </div>
-    <div class="span3">
-        <h3>Posts:</h3>
-    </div>
-</div>
-<% @forum.topics.each do |f| %>
-    <div class="row">
-        <div class="span12">
-            <div class="row">
-                <div class="span6">
-                    <p><%= link_to f.title, topics_path(f.forum_id) %></p>
-                    <p><%= f.description %></p>
-                </div>
-                <div class="span3">
-                    <p><%= get_user(f.user_id).alias %></p>
-                </div>
-                <div class="span3">
-                    <p>Post count</p>
+        </div>
+        <div class="row forum forumHeader">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-3">
+                        <h3>Title:</h3>
+                    </div>
+                    <div class="col-md-3">
+                        <h3>Post count:</h3>
+                    </div>
+                    <div class="col-md-3">
+                        <h3>Topic creator:</h3>
+                    </div>
+                    <div class="col-md-3">
+                        <h3>Creation date:</h3>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-<% end %>
-<div class="row">
-    <div class="span12">
-        <%= link_to "Create new topic", new_topic_path(params[:id]) %>
+        <% @topics.each do |f|%>
+            <div class="row forum">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <h3><%= link_to f.title, topic_path(f.id) %></h3>
+                            <p><%= f.description %></p>
+                        </div>
+                        <div class="col-md-3">
+                            <p><%= f.posts.count %></p>
+                        </div>
+                        <div class="col-md-3">
+                            <p><%= get_user(f.user_id).alias %></p>
+                        </div>
+                        <div class="col-md-3">
+                            <p><%= f.created_at %></p>
+                            <% if current_user.id === f.user_id %>
+                                <%= render "indexShowEdit", :topic => f %>
+                            <% end %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <% end %>
+        <div class="row">
+            <div class="col-md-12">
+                <%= paginate @topics %>
+                <p><%= link_to "Create new topic", new_topic_path(params[:id]) %></p>
+            </div>
+        </div>
     </div>
 </div>

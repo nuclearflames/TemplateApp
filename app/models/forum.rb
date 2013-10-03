@@ -3,4 +3,5 @@ class Forum < ActiveRecord::Base
     has_many :topics
 
     attr_accessible :title, :description, :name
+    paginates_per 10
 end

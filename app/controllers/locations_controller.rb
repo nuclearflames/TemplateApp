@@ -7,7 +7,11 @@ class LocationsController < ApplicationController
         end
     end
     def index
-        @users = User.all
+        if params[:name]
+            redirect_to(:controller => "root", :action => "show", :alias => params[:name])
+        else
+            @users = User.all
+        end
     end
 
     def edit
@@ -17,7 +21,6 @@ class LocationsController < ApplicationController
     def create
         @location = Location.new(params[:location])
         @location.user_id = current_user.id
-
 
         respond_to do |format|
             if @location.save
@@ -31,6 +34,6 @@ class LocationsController < ApplicationController
     end
 
     def show
-        @location = Location.find_by_users_id(current_user)
+        @location = Location.find_by_user_id(current_user)
     end
 end

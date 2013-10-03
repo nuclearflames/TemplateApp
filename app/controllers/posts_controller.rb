@@ -2,7 +2,7 @@ class PostsController < ApplicationController
     before_filter :authenticate_user!
 
     def index
-        @posts = Post.all
+        @posts = Post.page(params[:page])
     end
 
     def new
@@ -25,6 +25,13 @@ class PostsController < ApplicationController
     end
 
     def show
-        @posts = Post.where(:topic_id => params[:id])
+        @posts = Post.where(:topic_id => params[:id]).page(params[:page])
+    end
+
+    def destroy
+        @post = Post.find(params[:id])
+        @post.destroy
+
+        redirect_to posts_path
     end
 end

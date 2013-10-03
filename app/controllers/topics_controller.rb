@@ -5,7 +5,7 @@ class TopicsController < ApplicationController
         if params[:format]
             @topics = Topic.where(:forum_id => params[:format].to_i)
         else
-            @topics = Topic.all
+            @topics = Topic.page(params[:page])
         end
     end
 
@@ -29,6 +29,13 @@ class TopicsController < ApplicationController
     end
 
     def show
-        @topics = Topic.where(:forum_id => params[:id])
+        @posts = Topic.find(params[:id]).posts.page(params[:page])
+    end
+
+    def destroy
+        @topic = Topic.find(params[:id])
+        @topic.destroy
+
+        redirect_to topics_path
     end
 end

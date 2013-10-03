@@ -1,25 +1,38 @@
 <div class="row">
-    <div class="span12">
+    <div class="col-md-12">
         <h1>All of our members profiles</h1>
     </div>
 </div>
 <div class="row">
+    <div class="col-md-12">
+        <h3>Search by</h3>
+        <ul>
+            <%= fields_for "search[params]" do |f| %>
+                <li>asd <%= f.check_box "sad" %></li>
+                <li>asd <%= f.check_box "Distance" %></li>
+                <li>asd <%= f.check_box "sad" %></li>
+                <%= f.submit "Search" %>
+            <% end %>
+        </ul>
+    </div>
+</div>
+<div class="row">
     <% @users.each do |f|%>
-        <div class="span6 profile">
+        <div class="col-md-3 index-wrapper">
             <div class="row">
-                <div class="span3">
-                    <p>Username:</p>
-                </div>
-                <div class="span3">
-                    <p><%= f.alias %></p>
-                </div>
-                <div class="span3">
-                    <p>City:</p>
-                </div>
-                <div class="span3">
-                    <p><%= f.location.city %></p>
+                <div class="col-md-12 index-overlay">
+                    <%= image_tag f.avatar.url(:medium) %>
+                    <div class="locationOverlayText">
+                        <h3><%= link_to f.alias, "/" + f.alias %></h3>
+                        <h4><%= f.location.city %></h4>
+                    </div>
                 </div>
             </div>
         </div>
     <% end %>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div id="locations-map"></div>
+    </div>
 </div>

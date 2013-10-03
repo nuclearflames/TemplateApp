@@ -1,18 +1,18 @@
 <div class="row">
-    <div class="span12">
+    <div class="col-md-12">
         <h1>All of our posts</h1>
     </div>
 </div>
 <div class="row">
-    <div class="span12">
+    <div class="col-md-12">
         <div class="row">
-            <div class="span6">
+            <div class="col-md-6">
                 <p>Title:</p>
             </div>
-            <div class="span3">
+            <div class="col-md-3">
                 <p>Created by:</p>
             </div>
-            <div class="span3">
+            <div class="col-md-3">
                 <p>Created at:</p>
             </div>
         </div>
@@ -20,24 +20,26 @@
 </div>
 <% @posts.each do |f|%>
     <div class="row">
-        <div class="span12 profile">
+        <div class="col-md-12 profile">
             <div class="row">
-                <div class="span6">
+                <div class="col-md-6">
                     <p><%= f.title %></p>
                     <p><%= f.description %></p>
                 </div>
-                <div class="span3">
+                <div class="col-md-3">
                     <p><%= get_user(f.user_id).alias %></p>
                 </div>
-                <div class="span3">
+                <div class="col-md-3">
                     <p><%= f.created_at %></p>
+                    <p><%= link_to "Delete", post_path(f), method: :delete, data: {:confirm => "are you sure?"} %></p>
                 </div>
             </div>
         </div>
     </div>
 <% end %>
 <div class="row">
-    <div class="span12">
+    <div class="col-md-12">
+        <%= paginate @posts %>
         <%= link_to "Create new post", new_post_path(params[:format]) %>
     </div>
 </div>

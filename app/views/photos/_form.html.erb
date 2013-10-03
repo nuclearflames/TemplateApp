@@ -1,0 +1,35 @@
+<div class="row">
+    <div class="col-md-12">
+        <%= form_for @photo do |f| %>
+            <div class="row">
+                <div class="col-md-6">
+                    <%= f.label :title %>
+                </div>
+                <div class="col-md-6">
+                    <%= f.text_field :title %>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <%= f.label :description %>
+                </div>
+                <div class="col-md-6">
+                    <%= f.text_field :description %>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <%= f.label :picture %>
+                </div>
+                <div class="col-md-6">
+                    <%= f.file_field :picture %>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <%= f.submit %>
+                </div>
+            </div>
+        <% end %>
+    </div>
+</div>
