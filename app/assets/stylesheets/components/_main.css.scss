@@ -28,14 +28,15 @@ body {
 .yield {
     background-color: $white;
     text-align: center;
-    padding-top: 10px;
-    padding-bottom: 10px;
     a {
         color: $pills;
         text-decoration: none;
         &:hover {
             color: $goldfish;
         }
+    }
+    .row:first-child {
+        background-color: $mist;
     }
 }
 
@@ -88,13 +89,12 @@ body {
 }
 
 .registerBox {
-    border: 1px solid black;
     background-color: $storm;
 }
 
 .errorBox {
     border: 1px solid black;
-    background-color: $error;    
+    background-color: $error;
 }
 
 .slideshow {
@@ -123,4 +123,5 @@ body {
 
 ul {
     padding: 0;
+    list-style-type: none;
 }

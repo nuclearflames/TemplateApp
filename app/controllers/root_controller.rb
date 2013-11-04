@@ -11,8 +11,8 @@ class RootController < ApplicationController
   end
 
   def show
-        @user = User.find_by_alias(params[:alias])  
-        if !@user 
+        @user = User.find_by_alias(params[:alias])
+        if !@user
             redirect_to "/404"
         end
   end

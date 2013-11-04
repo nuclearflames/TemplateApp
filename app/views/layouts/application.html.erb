@@ -7,8 +7,6 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-    <span class="glyphicon glyphicon-search"></span>
-
     <div class="container main">
         <div class="row">
             <div class="col-md-12 content">
@@ -52,7 +50,7 @@
                     </div>
                 </div>
                 <div class="row yield">
-                    <div class="col-md-12">
+                    <div class="col-md-12 <%= params[:controller] %>">
                         <%= yield %>
                     </div>
                 </div>

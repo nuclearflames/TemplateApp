@@ -4,7 +4,7 @@
 	</div>
 </div>
 <div class="row">
-	<div class="col-md-12">
+	<div class="col-md-12 user-yield">
 		<%= form_for(resource, :html => { :multipart => true }, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
 		<% if !resource.errors.empty? %>
 			<div class="row">
@@ -14,42 +14,42 @@
 	  		</div>
 	  	<% end %>
 		<div class="row">
-			<div class="col-md-12">
+			<div class="col-md-6">
 				<%= f.label :email %>
 			</div>
-			<div class="col-md-12">
+			<div class="col-md-6">
 				<%= f.email_field :email, :autofocus => true %>
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-md-12">
+			<div class="col-md-6">
 				<%= f.label :avatar %>
 			</div>
-			<div class="col-md-12">
+			<div class="col-md-6">
 				<%= f.file_field :avatar %>
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-md-12">
+			<div class="col-md-6">
 				<%= f.label :password %>
 	  		</div>
-			<div class="col-md-12">
+			<div class="col-md-6">
 		  		<%= f.password_field :password %>
 	  		</div>
 		</div>
 		<div class="row">
-			<div class="col-md-12">
+			<div class="col-md-6">
 				<%= f.label :password_confirmation %>
 	  		</div>
-			<div class="col-md-12">
+			<div class="col-md-6">
 		  		<%= f.password_field :password_confirmation %>
 	  		</div>
 		</div>
 		<div class="row">
-			<div class="col-md-12">
+			<div class="col-md-6">
 				<%= f.label "alias/username" %>
 	  		</div>
-			<div class="col-md-12">
+			<div class="col-md-6">
 		  		<%= f.text_field :alias %>
 	  		</div>
 		</div>

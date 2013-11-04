@@ -1,9 +1,9 @@
 module ApplicationHelper
 	def global_website_name
-		return "The App"
+		return "templateApp"
 	end
 	def global_website_name_linked
-		return link_to "The App", "/"
+		return link_to "templateApp", "/"
 	end
 
 	def register_link
@@ -11,7 +11,7 @@ module ApplicationHelper
 	end
 
 	def signin_link
-		return link_to "Signin", "users/sign_in"
+		return link_to "Sign in", "users/sign_in"
 	end
 
 	def about_us_text

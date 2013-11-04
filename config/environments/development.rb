@@ -1,4 +1,4 @@
-AdultApp::Application.configure do
+TemplateApp::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
   Paperclip.options[:command_path] = "C:/Program Files/ImageMagick-6.8.6-Q16/convert.exe"
 

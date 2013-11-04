@@ -1,10 +1,24 @@
-ul {
-    list-style-type: none;
-}
-.yield {
+.user-yield {
     form {
-        .row-fluid:nth-child(even) {
+        label, input {
+        }
+        .row {
+            line-height: 30px;
+            input[type="submit"] {
+                margin: 10px;
+            }
+        }
+        .row:nth-child(even) {
         	background-color: $mist;
+        }
+        .row {
+            .col-md-6:nth-child(even) {
+                background-color: $mist;
+                min-height: 60px;
+                input {
+                    margin: 10px auto;
+                }
+            }
         }
     }
 }

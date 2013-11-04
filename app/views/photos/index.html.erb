@@ -12,14 +12,12 @@
 </div>
 <div class="row">
     <% @photos.each do |f|%>
-        <div class="col-md-3 index-wrapper">
-            <div class="row">
-                <div class="col-md-12 index-overlay">
-                    <%= link_to (image_tag f.picture.url(:medium)), photo_path(f) %>
-                    <div class="locationOverlayText">
-                        <h3><%= f.title %></h3>
-                        <h4><%= f.description %></h4>
-                    </div>
+        <div class="col-md-3 photo-wrapper">
+            <div class="photo-overlay">
+                <%= link_to (image_tag f.picture.url(:medium)), photo_path(f) %>
+                <div class="photo-overlay-text">
+                    <h3><%= f.title %></h3>
+                    <h4><%= f.description %></h4>
                 </div>
             </div>
         </div>

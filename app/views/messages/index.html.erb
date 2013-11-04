@@ -31,11 +31,11 @@
             </div>
         </div>
     <% end %>
-    <div class="row">
-        <div class="col-md-12">
-            <%= paginate @messages %>
-            <%= link_to "View Sent messages", sentmessages_path %>
-            <%= link_to "Send a new message", new_message_path(params[:format]) %>
-        </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <span><%= link_to "Send a new message", new_message_path(params[:format]) %></span>
+        <div><%= paginate @messages %></div>
+        <span><%= link_to "View Sent messages", sentmessages_path %></span>
     </div>
 </div>

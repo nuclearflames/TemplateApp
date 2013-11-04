@@ -33,9 +33,9 @@
     <% end %>
     <div class="row">
         <div class="col-md-12">
+            <%= link_to "Send a new message", new_message_path(params[:format]) %>
             <%= paginate @sentmessages %>
             <%= link_to "View recieved messages", messages_path %>
-            <%= link_to "Send a new message", new_message_path(params[:format]) %>
         </div>
     </div>
 </div>

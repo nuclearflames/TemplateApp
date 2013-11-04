@@ -18,11 +18,9 @@
             <div class="col-md-12">
                 <h3>Your Forum Posts</h3>
                 <% @user.posts.each do |f| %>
-                    <div class="row forum">
+                    <div class="row">
                         <div class="col-md-12">
                             <span>Posted by <%= link_to get_user(f.user_id).alias, "/" + get_user(f.user_id).alias %> at <%= f.created_at %></span>
-                        </div>
-                        <div class="col-md-12">
                             <h3><%= link_to f.title, post_path(f.topic_id) %></h3>
                             <p><%= f.description %></p>
                         </div>
@@ -32,7 +30,17 @@
         </div>
         <div class="row">
             <div class="col-md-12">
+                <p><%= link_to "View forums", forums_path %></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
                 <h4>Latest News</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <p><%= link_to "More news" %></p>
             </div>
         </div>
 	</div>

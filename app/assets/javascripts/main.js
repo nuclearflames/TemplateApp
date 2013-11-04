@@ -1,4 +1,4 @@
-$(function(){
+$(function () {
     $("#image-slider-profile").slidesjs({
         width: 225,
         height: 300,

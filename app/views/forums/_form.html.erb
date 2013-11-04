@@ -1,27 +1,23 @@
-<div class="row">
-    <div class="col-md-12">
-        <%= form_for @forum do |f| %>
-            <div class="row">
-                <div class="col-md-12">
-                    <%= f.label :title %>
-                </div>
-                <div class="col-md-12">
-                    <%= f.text_field :title %>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <%= f.label :description %>
-                </div>
-                <div class="col-md-12">
-                    <%= f.text_field :description %>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <%= f.submit %>
-                </div>
-            </div>
-        <% end %>
+<%= form_for @forum do |f| %>
+    <div class="row">
+        <div class="col-md-6 title">
+            <%= f.label :title %>
+        </div>
+        <div class="col-md-6 description">
+            <%= f.label :description %>
+        </div>
     </div>
-</div>
+    <div class="row">
+        <div class="col-md-6 input">
+            <%= f.text_field :title %>
+        </div>
+        <div class="col-md-6 description">
+            <%= f.text_area :description %>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <%= f.submit :class => "flat-rounded-button" %>
+        </div>
+    </div>
+<% end %>

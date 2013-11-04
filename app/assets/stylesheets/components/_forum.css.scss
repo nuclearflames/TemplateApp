@@ -1,20 +1,43 @@
-.forum {
+.forums, .topics, .posts {
     text-align: center;
-//    border-style: solid;
     border-color: gray;
-//    border-width: 0 0 1px 0;
-    &.forumHeader {
-//        border-style: solid;
+    input {
+        margin: 10px 0;
+    }
+    .header {
         border-color: gray;
-//        border-width: 0 0 3px 0;
         font-weight: bold;
-        background-color: $pond;
     }
     &.row:nth-child(odd) {
         background-color: $mist;
     }
-}
-
-.forumTitle {
-    
+    .title, .input {
+        background-color: $ocean;
+    }
+    .description {
+        background-color: $mist;
+        textarea {
+            margin: 10px 0;
+            width: 100%;
+        }
+    }
+    .footer p {
+        padding: 0;
+        margin: 10px 0;
+    }
+    #posts-description {
+        max-height: 100px;
+        width: 80%;
+    }
+    .posts-new {
+        input, textarea {
+            width: 80%;
+            margin: 0;
+            border: 1px solid $darkMist;
+            resize: none;
+        }
+        input[type="submit"] {
+            margin: 0 0 10px 0;
+        }
+    }
 }

@@ -1,43 +1,28 @@
-<div class="row forumTitle">
+<div class="row">
     <div class="col-md-12">
-        <div class="row forumTitle">
-            <div class="col-md-12">
-                <h1><%= get_topic(params[:id]).title %></h1>
-                <p><%= get_topic(params[:id]).description %></p>
-            </div>
+        <h1>All the posts for topic: <%= get_topic(params[:id]).title %></h1>
+        <p>Topic description: <%= get_topic(params[:id]).description %></p>
+    </div>
+</div>
+<% @posts.each do |f|%>
+    <div class="row">
+        <div class="col-md-2">
+            <label><%= f.title %></label>
         </div>
-        <div class="row forum forumHeader">
-            <div class="col-md-12">
-                <div class="row">
-                    <div class="col-md-3">
-                        <h3>Poster:</h3>
-                    </div>
-                    <div class="col-md-9">
-                        <h3>Title:</h3>
-                    </div>
-                </div>
-            </div>
+        <div class="col-md-7">
+            <p><%= f.description %></p>
         </div>
-        <% @posts.each do |f|%>
-            <div class="row forum">
-                <div class="col-md-12">
-                    <div class="row">
-                        <div class="col-md-3">
-                            <span>Posted by <%= link_to get_user(f.user_id).alias, "/" + get_user(f.user_id).alias %> at <%= f.created_at %></span>
-                        </div>
-                        <div class="col-md-9">
-                            <h3><%= f.title %></h3>
-                            <p><%= f.description %></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        <% end %>
-        <div class="row">
-            <div class="col-md-12">
-                <%= paginate @posts %>
-                <p><%= link_to "Create a new post", new_post_path(params[:id]) %></p>
-            </div>
+        <div class="col-md-3">
+            <span><%= link_to get_user(f.user_id).alias, "/" + get_user(f.user_id).alias %> <br /> <%= f.created_at %></span>
         </div>
+    </div>
+<% end %>
+
+<%= render :partial => "posts/form" %>
+
+<div class="row footer">
+    <div class="col-md-12">
+        <%= paginate @posts %>
+        <p><%= link_to "Create a new post", new_post_path(:topic => params[:id]) %></p>
     </div>
 </div>

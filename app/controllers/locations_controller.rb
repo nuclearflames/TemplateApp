@@ -10,7 +10,11 @@ class LocationsController < ApplicationController
         if params[:name]
             redirect_to(:controller => "root", :action => "show", :alias => params[:name])
         else
-            @users = User.all
+            @users =  User.all
+            respond_to do |format|
+                format.html { render :html => @users }
+                format.xml { render :xml => @users }
+            end
         end
     end
 

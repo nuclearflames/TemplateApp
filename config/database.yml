@@ -9,7 +9,7 @@ development:
   adapter: postgresql
   encoding: unicode
   reconnect: false
-  database: addultApp_development
+  database: adultApp_development
   pool: 5
   username: postgres
   password: chelsea
@@ -21,7 +21,7 @@ test:
   adapter: postgresql
   encoding: utf8
   reconnect: false
-  database: addultApp_test
+  database: adultApp_test
   pool: 5
   username: postgres
   password: chelsea
@@ -30,7 +30,7 @@ production:
   adapter: postgresql
   encoding: utf8
   reconnect: false
-  database: addultApp_production
+  database: adultApp_production
   pool: 5
   username: postgres
   password: chelsea

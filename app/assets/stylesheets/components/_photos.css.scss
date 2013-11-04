@@ -1,0 +1,16 @@
+.photo-overlay {
+    position: relative;
+    padding: 0;
+    img {
+        width: 100%;
+    }
+    .photo-overlay-text {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        text-align: center;
+        background-color: $darkMist;
+        height: 100%;
+        min-width: 30%;
+    }
+}
