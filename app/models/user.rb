@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   has_many :topics, dependent: :destroy
   has_many :posts, dependent: :destroy
   has_many :photos, dependent: :destroy
+  has_many :messages, dependent: :destroy
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable

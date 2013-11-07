@@ -6,14 +6,12 @@
 <div class="row">
     <div class="col-md-12">
         <h3>Search by</h3>
-        <ul>
+        <dl>
             <%= fields_for "search[params]" do |f| %>
-                <li>asd <%= f.check_box "sad" %></li>
-                <li>asd <%= f.check_box "Distance" %></li>
-                <li>asd <%= f.check_box "sad" %></li>
+                <dd>asd <%= f.check_box "sad" %> asd <%= f.check_box "Distance" %> asd <%= f.check_box "sad" %></dd>
                 <%= f.submit "Search" %>
             <% end %>
-        </ul>
+        </dl>
     </div>
 </div>
 <div class="row">
@@ -24,7 +22,11 @@
                     <%= image_tag f.avatar.url(:medium) %>
                     <div class="locationOverlayText">
                         <h3><%= link_to f.alias, "/" + f.alias %></h3>
-                        <h4><%= f.location.city %></h4>
+                        <% if f.location %>
+                            <h4><%= f.location.city %></h4>
+                        <% else %>
+                            <p>No location data availiable</p>
+                        <% end %>
                     </div>
                 </div>
             </div>

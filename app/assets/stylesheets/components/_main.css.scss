@@ -28,9 +28,11 @@ body {
 .yield {
     background-color: $white;
     text-align: center;
+    margin-bottom: 10px;
     a {
         color: $pills;
         text-decoration: none;
+        font-weight: bold;
         &:hover {
             color: $goldfish;
         }
