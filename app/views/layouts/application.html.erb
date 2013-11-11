@@ -12,28 +12,32 @@
             <div class="col-sm-12 content">
                 <div class="row sidebar">
                     <div class="col-sm-1 visible-xs">
-                        <p><%=link_to "Menu", "" %></p>
+                        <span>
+                            <%=link_to "", :class => "menu" do %>
+                                <span><i class="fa fa-list fa-2x"></i> Menu</span>
+                            <% end %>
+                        </span>
                     </div>
                     <div class="col-sm-2">
-                        <%=link_to "/photos" do %>
-                            <i class="fa fa-picture-o fa-2x"></i>
+                        <%= link_to "/photos" do %>
+                            <i class="fa fa-picture-o"></i>
                             <span>Photos</span>
                         <% end %>
                     </div>
                     <div class="col-sm-2">
-                        <%=link_to "/forums" do %>
+                        <%= link_to "/forums" do %>
                             <i class="fa fa-users fa-2x"></i>
                             <span>Forums</span>
                         <% end %>
                     </div>
                     <div class="col-sm-2">
-                        <%=link_to "/search" do %>
+                        <%= link_to "/search" do %>
                             <i class="fa fa-search fa-2x"></i>
                             <span>Search</span>
                         <% end %>
                     </div>
                     <div class="col-sm-2">
-                        <%=link_to "/messages" do %>
+                        <%= link_to "/messages" do %>
                             <i class="fa fa-envelope-o fa-2x"></i>
                             <span>Mailbox (<%= current_user.messages.count.to_s %>)</span>
                         <% end %>
@@ -53,7 +57,7 @@
                             <% end %>
                         </div>
                     <% else %>
-                        <%=link_to "/users/sign_in" do %>
+                        <%= link_to "/users/sign_in" do %>
                             <i class="fa fa-sign-in fa-2x"></i>
                             <span>Login</span>
                         <% end %>
@@ -61,7 +65,7 @@
                 </div>
                 <div class="row title">
                     <div class="col-sm-2">
-                        <%=link_to "/" do %>
+                        <%= link_to "/" do %>
                             <i class="fa fa-home fa-2x"></i> 
                             <span>Home</span>
                         <% end %>

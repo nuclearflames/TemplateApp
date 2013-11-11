@@ -50,6 +50,14 @@ input, textarea {
             background-color: $pills;
         }
     }
+    .col-sm-2 {
+        display: none;
+    }
+    .visible {
+        .col-sm-2 {
+            display: block;
+        }
+    }
 }
 
 .yield {
