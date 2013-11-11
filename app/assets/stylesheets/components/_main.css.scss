@@ -3,39 +3,62 @@
 
 body {
     font-family: 'Ropa Sans', sans-serif;
-    background-color: $storm;
+    background-color: $white;
+    font-size: 14px;
+    line-height: initial;
     margin: 0;
-    a {
-        color: $white;
-        text-decoration: none;
-        &:hover {
-            color: $white;
-            text-decoration: none;
-        }
+}
+
+a {
+    display: inline-block;
+    color: $white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.25s;
+    &:hover {
+        color: $storm;
+        text-decoration: underline;
     }
+}
+
+p {
+    margin: 5px;
+}
+
+ul {
+    padding: 0;
+    list-style-type: none;
+}
+
+input, textarea {
+    font-family: 'Ropa Sans', sans-serif;
+    font-size: 16px;
 }
 
 .sidebar {
     background-color: $pills;
     margin: 0px;
-//    border-bottom: 5px solid black;
     text-align: center;
-    p {
-        margin: 10px 0;
+    a {
+        display: block;
+        padding: 10px 0;
+        transition: 0.25s;
+        span {
+            display: block;
+        }
+        &:hover {
+            background-color: $pills;
+        }
     }
 }
 
 .yield {
-    background-color: $white;
+    background-color: $background;
     text-align: center;
-    margin-bottom: 10px;
+    padding-bottom: 10px;
     a {
+        margin: 5px;
         color: $pills;
-        text-decoration: none;
-        font-weight: bold;
-        &:hover {
-            color: $goldfish;
-        }
     }
     .row:first-child {
         background-color: $mist;
@@ -46,6 +69,15 @@ body {
     background-color: $pond;
 //    border-bottom: 5px solid black;
     text-align: center;
+    a {
+        margin: 5px 0;
+    }
+    h1 {
+        margin: 0;
+    }
+    span {
+        display: block;
+    }
 }
 
 .main {
@@ -121,9 +153,4 @@ body {
             vertical-align: middle;
         }
     }
-}
-
-ul {
-    padding: 0;
-    list-style-type: none;
 }

@@ -1,5 +1,16 @@
 @media (min-width: 1200px) {
     .container {
-        max-width: 90%;
+        max-width: 95%;
+    }
+}
+
+@media (min-width: 768px) {
+    .forums, .topics, .posts {
+        label, h3 {
+            display: block;
+        }
+        input, textarea {
+            margin: 10px;
+        }
     }
 }

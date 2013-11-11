@@ -1,23 +1,23 @@
 <%= form_for @topic do |f| %>
     <%= f.hidden_field(:forum_id, :value => params[:id].to_i) %>
     <div class="row">
-        <div class="col-md-6 title">
+        <div class="col-sm-6 title">
             <%= f.label :title %>
         </div>
-        <div class="col-md-6 description">
+        <div class="col-sm-6 description">
             <%= f.label :description %>
         </div>
     </div>
     <div class="row">
-        <div class="col-md-6 input">
-            <%= f.text_field :title %>
+        <div class="col-sm-6 input">
+            <%= f.text_field :title, :placeholder => "title" %>
         </div>
-        <div class="col-md-6 description">
-            <%= f.text_area :description %>
+        <div class="col-sm-6 description">
+            <%= f.text_area :description, :placeholder => "description" %>
         </div>
     </div>
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-sm-12">
             <%= f.submit :class => "flat-rounded-button" %>
         </div>
     </div>

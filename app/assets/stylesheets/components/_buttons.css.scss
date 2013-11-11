@@ -1,4 +1,3 @@
 .flat-rounded-button {
-    margin: 10px;
-    @include flat-button($pond, $aoi, $white);
+    @include flat-button($darkMist, $storm, $white);
 }

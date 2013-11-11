@@ -33,4 +33,13 @@ module ApplicationHelper
 	def get_forum(id)
 		return Forum.find(id)
 	end
+
+	#Takes the value to count and what to name it
+	def no_results(value, name)
+		string = "<div class='row'><div class='col-sm-12'><p>No " + name + " are available to view</p></div></div>"
+		if value.count == 0
+			return string;
+		end
+		return "<div></div>"
+	end
 end

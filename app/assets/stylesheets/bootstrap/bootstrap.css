@@ -148,15 +148,6 @@ legend {
 }
 
 button,
-input,
-select,
-textarea {
-  margin: 0;
-  font-family: inherit;
-  font-size: 100%;
-}
-
-button,
 input {
   line-height: normal;
 }
@@ -299,45 +290,11 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
-body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  line-height: 1.428571429;
-  color: #333333;
-  background-color: #ffffff;
-}
-
-input,
-button,
-select,
-textarea {
-  font-family: inherit;
-  font-size: inherit;
-  line-height: inherit;
-}
-
 button,
 input,
 select[multiple],
 textarea {
   background-image: none;
-}
-
-a {
-  color: #428bca;
-  text-decoration: none;
-}
-
-a:hover,
-a:focus {
-  color: #2a6496;
-  text-decoration: underline;
-}
-
-a:focus {
-  outline: thin dotted #333;
-  outline: 5px auto -webkit-focus-ring-color;
-  outline-offset: -2px;
 }
 
 img {
@@ -387,10 +344,6 @@ hr {
   overflow: hidden;
   clip: rect(0 0 0 0);
   border: 0;
-}
-
-p {
-  margin: 0 0 10px;
 }
 
 .lead {
@@ -448,23 +401,6 @@ cite {
 
 .text-center {
   text-align: center;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-.h1,
-.h2,
-.h3,
-.h4,
-.h5,
-.h6 {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 500;
-  line-height: 1.1;
 }
 
 h1 small,
@@ -697,11 +633,6 @@ address {
   margin-bottom: 20px;
   font-style: normal;
   line-height: 1.428571429;
-}
-
-code,
-pre {
-  font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
 }
 
 code {

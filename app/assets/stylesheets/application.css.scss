@@ -1,10 +1,11 @@
 /*
  *= require_self
+ *= require font-awesome
  */
 
 @import "colours";
 @import "components/main";
-@import "bootstrap/bootstrap.min";
+@import "bootstrap/bootstrap";
 @import "components/devise";
 @import "components/locations";
 @import "components/forum";

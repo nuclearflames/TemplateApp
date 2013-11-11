@@ -7,6 +7,7 @@ gem 'rails', '3.2.12'
 
 gem 'pg'
 gem 'devise'
+gem 'font-awesome-sass'
 
 # Gems used only for assets and not required
 # in production environments by default.

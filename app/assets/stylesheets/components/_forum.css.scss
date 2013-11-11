@@ -1,8 +1,17 @@
 .forums, .topics, .posts {
     text-align: center;
     border-color: gray;
-    input {
-        margin: 10px 0;
+    label, h3 {
+        display: none;
+    }
+    #posts-description {
+        max-height: 100px;
+        width: 80%;
+    }
+    input, textarea {
+        width: 80%;
+        margin: 0;
+        resize: none;
     }
     .header {
         border-color: gray;
@@ -12,32 +21,31 @@
         background-color: $mist;
     }
     .title, .input {
-        background-color: $ocean;
+        background-color: $mist;
     }
     .description {
         background-color: $mist;
-        textarea {
-            margin: 10px 0;
-            width: 100%;
-        }
     }
     .footer p {
         padding: 0;
         margin: 10px 0;
     }
-    #posts-description {
-        max-height: 100px;
-        width: 80%;
+    .row:nth-child(odd) {
+        background-color: $mist;
     }
     .posts-new {
+        background-color: $pond;
         input, textarea {
             width: 80%;
-            margin: 0;
             border: 1px solid $darkMist;
             resize: none;
         }
-        input[type="submit"] {
-            margin: 0 0 10px 0;
+        .row {
+            background-color: transparent;
+            padding: 0;
+        }
+        .posts-new-container {
+            margin: 10px;
         }
     }
 }

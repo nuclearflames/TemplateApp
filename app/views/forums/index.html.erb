@@ -1,30 +1,30 @@
 <div class="row">
-    <div class="col-md-12">
+    <div class="col-sm-12">
         <h1>All of our forums</h1>
         <p>Here you can post and create new content to our forums</p>
     </div>
 </div>
 <div class="row header">
-    <div class="col-md-6">
-        <h3>About Fourm:</h3>
+    <div class="col-sm-6">
+        <h3>About Fourm</h3>
     </div>
-    <div class="col-md-3">
-        <h3>Topic Count:</h3>
+    <div class="col-sm-3">
+        <h3>Topic Count</h3>
     </div>
-    <div class="col-md-3">
-        <h3>Owner:</h3>
+    <div class="col-sm-3">
+        <h3>Owner</h3>
     </div>
 </div>
 <% @forums.each do |f|%>
     <div class="row">
-        <div class="col-md-6">
-            <label><%= link_to f.title, forum_path(f.id) %></label>
+        <div class="col-sm-6">
+            <p><%= link_to f.title, forum_path(f.id) %></p>
             <p><%= f.description %></p>
         </div>
-        <div class="col-md-3">
+        <div class="col-sm-3">
             <p><%= f.topics.count %></p>
         </div>
-        <div class="col-md-3">
+        <div class="col-sm-3">
             <p><%= get_user(f.user_id).alias %></p>
             <% if current_user.id === f.user_id %>
                 <%= render "indexEdit", :forum => f %>
@@ -32,8 +32,9 @@
         </div>
     </div>
 <% end %>
+<%= no_results(@forums, "forums").html_safe %>
 <div class="row footer">
-    <div class="col-md-12">
+    <div class="col-sm-12">
         <%= paginate @forums %>
         <p><%= link_to "Create new forum", new_forum_path %></p>
     </div>
