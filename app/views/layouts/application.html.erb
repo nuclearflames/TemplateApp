@@ -49,16 +49,16 @@
                             <% end %>
                         <% end %>
                     </div>
-                    <div class="col-sm-3">
+                    <div class="col-sm-4">
                         <% if user_signed_in? %>
-                            <div class="col-sm-2">
+                            <div class="col-sm-6">
                                 <%= link_to "/" + current_user.alias do %>
                                     <i class="fa fa-user fa-2x"></i>
                                     <span>View Profile</span>
                                 <% end %>
 
                             </div>
-                            <div class="col-sm-2">
+                            <div class="col-sm-6">
                                 <%= link_to "/users/sign_out", :method => :delete do %>
                                     <i class="fa fa-sign-out fa-2x"></i>
                                     <span>Logout</span>

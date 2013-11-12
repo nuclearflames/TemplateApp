@@ -10,10 +10,10 @@ $(function () {
         i.preventDefault();
         if ($(".sidebar.visible").length) {
             $(".sidebar").removeClass("visible");
-            $(".sidebar .col-sm-2").hide();
+            $(".sidebar div").hide();
         } else {
             $(".sidebar").addClass("visible");
-            $(".sidebar .col-sm-2").show();
+            $(".sidebar div").show();
         }
     });
 });

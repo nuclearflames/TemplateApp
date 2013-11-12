@@ -4,7 +4,7 @@
 body {
     font-family: 'Ropa Sans', sans-serif;
     background-color: $white;
-    font-size: 14px;
+    font-size: 16px;
     line-height: initial;
     margin: 0;
 }
@@ -50,7 +50,7 @@ input, textarea {
             background-color: $pills;
         }
     }
-    .col-sm-2 {
+    div {
         display: none;
     }
     .visible {
@@ -134,7 +134,7 @@ input, textarea {
 }
 
 .errorBox {
-    border: 1px solid black;
+    padding: 5px;
     background-color: $error;
 }
 
