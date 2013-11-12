@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html>
 <head>
   <title><%= global_website_name %></title>
@@ -20,7 +20,7 @@
                     </div>
                     <div class="col-sm-2">
                         <%= link_to "/photos" do %>
-                            <i class="fa fa-picture-o"></i>
+                            <i class="fa fa-picture-o fa-2x"></i>
                             <span>Photos</span>
                         <% end %>
                     </div>
@@ -37,55 +37,42 @@
                         <% end %>
                     </div>
                     <div class="col-sm-2">
-<<<<<<< HEAD
-                        <%= link_to "/messages" do %>
-                            <i class="fa fa-envelope-o fa-2x"></i>
-                            <span>Mailbox (<%= current_user.messages.count.to_s %>)</span>
-=======
                         <% if (current_user) %>
-                            <p><%=link_to "Mailbox (" + current_user.messages.count.to_s + ")", "/messages" %></p>
+                            <%= link_to "/messages" do %>
+                                <i class="fa fa-envelope-o fa-2x"></i>
+                                <span>Mailbox (<%= current_user.messages.count.to_s %>)</span>
+                            <% end %>
                         <% else %>
-                            <p><%=link_to "Mailbox", "/messages" %></p>
+                            <%= link_to "/messages" do %>
+                                <i class="fa fa-envelope-o fa-2x"></i>
+                                <span>Mailbox</span>
+                            <% end %>
                         <% end %>
                     </div>
                     <div class="col-sm-3">
                         <% if user_signed_in? %>
-                            <div class="row">
-                                <div class="col-sm-7">
-                                    <p><%= link_to "View Profile", "/" + current_user.alias %></p>
-                                </div>
-                                <div class="col-sm-5">
-                                    <p><%= link_to "Logout", "/users/sign_out", :method => :delete %></p>
-                                </div>
+                            <div class="col-sm-2">
+                                <%= link_to "/" + current_user.alias do %>
+                                    <i class="fa fa-user fa-2x"></i>
+                                    <span>View Profile</span>
+                                <% end %>
+
+                            </div>
+                            <div class="col-sm-2">
+                                <%= link_to "/users/sign_out", :method => :delete do %>
+                                    <i class="fa fa-sign-out fa-2x"></i>
+                                    <span>Logout</span>
+                                <% end %>
                             </div>
                         <% else %>
-                            <p><%=link_to "Login", "/users/sign_in" %></p>
->>>>>>> work-dev
+                            <%= link_to "/users/sign_in" do %>
+                                <i class="fa fa-sign-in fa-2x"></i>
+                                <span>Login</span>
+                            <% end %>
                         <% end %>
                     </div>
-                    <% if user_signed_in? %>
-                        <div class="col-sm-2">
-                            <%=link_to "/" + current_user.alias do %>
-                                <i class="fa fa-user fa-2x"></i>
-                                <span>View Profile</span>
-                            <% end %>
-
-                        </div>
-                        <div class="col-sm-2">
-                            <%=link_to "/users/sign_out", :method => :delete do %>
-                                <i class="fa fa-sign-out fa-2x"></i>
-                                <span>Logout</span>
-                            <% end %>
-                        </div>
-                    <% else %>
-                        <%= link_to "/users/sign_in" do %>
-                            <i class="fa fa-sign-in fa-2x"></i>
-                            <span>Login</span>
-                        <% end %>
-                    <% end %>
                 </div>
                 <div class="row title">
-<<<<<<< HEAD
                     <div class="col-sm-2">
                         <%= link_to "/" do %>
                             <i class="fa fa-home fa-2x"></i> 
@@ -93,11 +80,6 @@
                         <% end %>
                     </div>
                     <div class="col-sm-4">
-=======
-                    <div class="down-arrow">
-                    </div>
-                    <div class="col-sm-6">
->>>>>>> work-dev
                         <h1><%= global_website_name_linked %></h1>
                     </div>
                     <div class="col-sm-6 slideshow">
