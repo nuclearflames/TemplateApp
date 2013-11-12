@@ -37,9 +37,30 @@
                         <% end %>
                     </div>
                     <div class="col-sm-2">
+<<<<<<< HEAD
                         <%= link_to "/messages" do %>
                             <i class="fa fa-envelope-o fa-2x"></i>
                             <span>Mailbox (<%= current_user.messages.count.to_s %>)</span>
+=======
+                        <% if (current_user) %>
+                            <p><%=link_to "Mailbox (" + current_user.messages.count.to_s + ")", "/messages" %></p>
+                        <% else %>
+                            <p><%=link_to "Mailbox", "/messages" %></p>
+                        <% end %>
+                    </div>
+                    <div class="col-sm-3">
+                        <% if user_signed_in? %>
+                            <div class="row">
+                                <div class="col-sm-7">
+                                    <p><%= link_to "View Profile", "/" + current_user.alias %></p>
+                                </div>
+                                <div class="col-sm-5">
+                                    <p><%= link_to "Logout", "/users/sign_out", :method => :delete %></p>
+                                </div>
+                            </div>
+                        <% else %>
+                            <p><%=link_to "Login", "/users/sign_in" %></p>
+>>>>>>> work-dev
                         <% end %>
                     </div>
                     <% if user_signed_in? %>
@@ -64,6 +85,7 @@
                     <% end %>
                 </div>
                 <div class="row title">
+<<<<<<< HEAD
                     <div class="col-sm-2">
                         <%= link_to "/" do %>
                             <i class="fa fa-home fa-2x"></i> 
@@ -71,6 +93,11 @@
                         <% end %>
                     </div>
                     <div class="col-sm-4">
+=======
+                    <div class="down-arrow">
+                    </div>
+                    <div class="col-sm-6">
+>>>>>>> work-dev
                         <h1><%= global_website_name_linked %></h1>
                     </div>
                     <div class="col-sm-6 slideshow">
