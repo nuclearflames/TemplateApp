@@ -24,7 +24,11 @@
                         <p><%=link_to "Search", "/search" %></p>
                     </div>
                     <div class="col-sm-2">
-                        <p><%=link_to "Mailbox (" + current_user.messages.count.to_s + ")", "/messages" %></p>
+                        <% if (current_user) %>
+                            <p><%=link_to "Mailbox (" + current_user.messages.count.to_s + ")", "/messages" %></p>
+                        <% else %>
+                            <p><%=link_to "Mailbox", "/messages" %></p>
+                        <% end %>
                     </div>
                     <div class="col-sm-3">
                         <% if user_signed_in? %>
@@ -42,6 +46,8 @@
                     </div>
                 </div>
                 <div class="row title">
+                    <div class="down-arrow">
+                    </div>
                     <div class="col-sm-6">
                         <h1><%= global_website_name_linked %></h1>
                     </div>
