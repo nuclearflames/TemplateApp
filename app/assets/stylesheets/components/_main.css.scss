@@ -35,14 +35,19 @@ input, textarea {
     font-size: 16px;
 }
 
-.sidebar {
+.main-sidebar {
     background-color: $pills;
     margin: 0px;
     text-align: center;
+    z-index: 5;
     a {
         display: block;
         padding: 10px 0;
         transition: 0.25s;
+        -webkit-box-shadow: 0 0 10px $pills;
+           -moz-box-shadow: 0 0 10px $pills;
+                box-shadow: 0 0 10px $pills;
+        z-index: 5;
         span {
             display: block;
         }
@@ -53,37 +58,43 @@ input, textarea {
     div {
         display: none;
     }
-    .visible {
+    &.visible {
         div {
             display: block;
         }
     }
 }
 
-.yield {
-    background-color: $background;
-    text-align: center;
-    padding-bottom: 10px;
-    a {
-        margin: 5px;
-        color: $pills;
-    }
-    .row:first-child {
-        background-color: $mist;
-    }
-}
-
-.title {
+.main-title {
     background-color: $pond;
     text-align: center;
+    z-index: 4;
+    -webkit-box-shadow: 0 10px 10px $pond;
+       -moz-box-shadow: 0 10px 10px $pond;
+            box-shadow: 0 10px 10px $pond;
     a {
         margin: 5px 0;
     }
     h1 {
         margin: 0;
     }
-    span {
+    //Slideshow
+    .slideshow {
         display: block;
+        z-index: 3;
+    }
+}
+
+.main-yield {
+    z-index: 3;
+    background-color: $background;
+    text-align: center;
+    a {
+        margin: 5px;
+        color: $pills;
+    }
+    .row:first-child {
+        background-color: $mist;
     }
 }
 
@@ -123,10 +134,12 @@ input, textarea {
     transform: skew(8deg) rotate(3deg);
 }
 
-.information {
+.main-information {
     text-align: center;
-//    border-top: 2px solid;
     background-color: $pills;
+    -webkit-box-shadow: 0 -1px 10px $pills;
+       -moz-box-shadow: 0 -1px 10px $pills;
+            box-shadow: 0 -1px 10px $pills;
 }
 
 .registerBox {
@@ -136,12 +149,10 @@ input, textarea {
 .errorBox {
     padding: 5px;
     background-color: $error;
+    margin: 5px 0;
 }
 
-.slideshow {
-    background-color: $white;
-}
-
+//Should be in location partial
 .index-wrapper {
     text-align: right;
     .index-overlay {

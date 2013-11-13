@@ -4,4 +4,6 @@ class Forum < ActiveRecord::Base
 
     attr_accessible :title, :description, :name
     paginates_per 10
+
+  	validates_presence_of :title, :description, :name
 end

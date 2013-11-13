@@ -18,7 +18,7 @@ class User < ActiveRecord::Base
 
   # attr_accessible :title, :body
 
-  validates_presence_of :alias
+  validates_presence_of :alias, :email, :password, :password_confirmation, :forename, :surname, :birthday
 
   validates_uniqueness_of :alias
 end

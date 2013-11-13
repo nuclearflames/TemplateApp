@@ -6,13 +6,6 @@
 <div class="row">
 	<div class="col-md-12 user-yield">
 		<%= form_for(resource, :html => { :multipart => true }, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-		<% if !resource.errors.empty? %>
-			<div class="row">
-				<div class="col-md-12 errorBox">
-	  				<%= devise_error_messages! %>
-		  		</div>
-	  		</div>
-	  	<% end %>
 		<div class="row">
 			<div class="col-md-6">
 				<%= f.label :email %>

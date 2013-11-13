@@ -6,14 +6,13 @@ $(function () {
             active: false
         }
     });
-    $(".sidebar .menu").click(function (i) {
+    $(".main-sidebar").find(".menu").click(function (i) {
+        var val = $(".main-sidebar");
         i.preventDefault();
-        if ($(".sidebar.visible").length) {
-            $(".sidebar").removeClass("visible");
-            $(".sidebar div").hide();
+        if ($(".main-sidebar.visible").length) {
+            val.removeClass("visible");
         } else {
-            $(".sidebar").addClass("visible");
-            $(".sidebar div").show();
+            val.addClass("visible");
         }
     });
 });
