@@ -13,12 +13,12 @@ class User < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :forename, :surname, :aboutme, :alias, :birthday, :avatar
-  
+
   has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"
 
   # attr_accessible :title, :body
 
-  validates_presence_of :alias, :email, :password, :password_confirmation, :forename, :surname, :birthday
+  validates_presence_of :alias, :email, :password, :password_confirmation
 
   validates_uniqueness_of :alias
 end

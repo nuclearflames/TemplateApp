@@ -4,34 +4,27 @@
     </div>
 </div>
 <div class="row">
-    <div class="col-md-12">
-        <div class="row">
-            <div class="col-sm-2">
-                <h3>To</h3>
-            </div>
-            <div class="col-sm-10 message-content">
-                <h3>Message</h3>
-            </div>
-        </div>
+    <div class="col-sm-4">
+        <h3>To</h3>
+    </div>
+    <div class="col-sm-8">
+        <h3>Message</h3>
     </div>
 </div>
-<div class="row">
-    <% @sentmessages.each do |f|%>
-        <div class="col-md-12 message">
-            <div class="row">
-                <div class="col-sm-2">
-                    <p><%= get_user(f.user_id).alias %></p>
-                </div>
-                <div class="col-sm-10 message-content">
-                    <p><%= link_to f.title, messages_path %></p>
-                    <p><%= f.content %></p>
-                    <p><%= link_to "Delete", message_path(f), method: :delete, data: {:confirm => "are you sure?"} %></p>
-                    <p><%= f.created_at %></p>
-                </div>
-            </div>
+<% @sentmessages.each do |f|%>
+    <div class="row read-<%= f.read %>">
+        <div class="col-sm-4">
+            <p><%= link_to get_user(f.user_id).alias, get_user(f.user_id).alias %></p>
+            <p>Status: <span class="status"><%= find_status(f) %></span></p>
+            <p>Sent on: <%= f.created_at.strftime("%Y-%m-%d %H:%M:%S") %></p>
         </div>
-    <% end %>
-</div>
+        <div class="col-sm-8 message-content">
+            <p><%= link_to f.title %></p>
+            <p><%= f.content %></p>
+            <p><%= link_to "Delete", message_path(f), method: :delete, data: {:confirm => "are you sure?"} %></p>
+        </div>
+    </div>
+<% end %>
 <%= no_results(@sentmessages, "sent messages").html_safe %>
 <div class="row">
     <div class="col-md-12">

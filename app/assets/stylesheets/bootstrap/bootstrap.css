@@ -88,14 +88,6 @@ mark {
   background: #ff0;
 }
 
-code,
-kbd,
-pre,
-samp {
-  font-family: monospace, serif;
-  font-size: 1em;
-}
-
 pre {
   white-space: pre-wrap;
 }
@@ -1569,12 +1561,6 @@ legend {
   color: #333333;
   border: 0;
   border-bottom: 1px solid #e5e5e5;
-}
-
-label {
-  display: inline-block;
-  margin-bottom: 5px;
-  font-weight: bold;
 }
 
 input[type="search"] {

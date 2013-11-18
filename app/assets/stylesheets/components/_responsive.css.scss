@@ -5,10 +5,10 @@
 }
 
 @media (min-width: 768px) {
+    label, h3 {
+        display: block;
+    }
     .forums, .topics, .posts {
-        label, h3 {
-            display: block;
-        }
         input, textarea {
             margin: 10px;
         }
@@ -16,6 +16,15 @@
     .main-sidebar {
         div {
             display: block;
+        }
+    }
+    .messages, .sentmessages {
+        input, textarea {
+            width: 50%;
+            resize: none;
+        }
+        .message-content {
+            text-align: right;
         }
     }
 }

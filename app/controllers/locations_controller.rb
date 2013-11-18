@@ -2,7 +2,7 @@ class LocationsController < ApplicationController
     before_filter :authenticate_user!
     def new
         @location = Location.new
-        if Location.find_by_user_id(current_user.id)
+        if Location.where(:user_id => current_user.id).exists?
             redirect_to(:controller => 'locations', :action => 'edit')
         end
     end
@@ -10,16 +10,16 @@ class LocationsController < ApplicationController
         if params[:name]
             redirect_to(:controller => "root", :action => "show", :alias => params[:name])
         else
-            @users =  User.where(location != nil)
+            @users =  User.all
             respond_to do |format|
                 format.html { render :html => @users }
-                format.xml { render :xml => @users }
+                format.json { render :json => @users.to_json(:include => :location) }
             end
         end
     end
 
     def edit
-        @location = Location.find_by_user_id(current_user)
+        @location = Location.where(:user_id => current_user.id)
     end
 
     def create

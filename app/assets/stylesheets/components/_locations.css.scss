@@ -1,3 +1,20 @@
-#locations-map {
-    height: 500px;
+.locations {
+    .maps {
+        height: 500px;
+    }
+
+    .index-wrapper {
+        background-color: $darkMist;
+        text-align: right;
+        padding: 10px 0;
+        img {
+            width: 100%;
+        }
+        .locationOverlayText {
+            vertical-align: middle;
+        }
+    }
+    .gMap {
+        padding: 10px 0;
+    }
 }

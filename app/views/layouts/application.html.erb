@@ -40,7 +40,7 @@
                         <% if (current_user) %>
                             <%= link_to "/messages" do %>
                                 <i class="fa fa-envelope-o fa-2x"></i>
-                                <span>Mailbox (<%= current_user.messages.count.to_s %>)</span>
+                                <span>Mailbox (<%= current_user.messages.where(:read => false).count.to_s %>)</span>
                             <% end %>
                         <% else %>
                             <%= link_to "/messages" do %>

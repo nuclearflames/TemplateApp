@@ -2,7 +2,7 @@ class MessagesController < ApplicationController
     before_filter :authenticate_user!
 
     def index
-        @messages = Message.page(params[:page]).where(:user_id => current_user.id)
+        @messages = Message.page(params[:page]).where(:user_id => current_user.id).order("created_at desc")
     end
 
     def new
@@ -17,7 +17,7 @@ class MessagesController < ApplicationController
         respond_to do |format|
             if @message.save
                 flash[:notice] = 'Message successfully sent.'
-                format.html { redirect_to(message_path(@message.id))}
+                format.html { redirect_to(messages_path)}
             else
                 format.html { render :action => "new" }
                 format.xml  { render :xml => @message.errors, :status => :unprocessable_entity }
@@ -27,7 +27,14 @@ class MessagesController < ApplicationController
 
     def show
         @message = Message.find(params[:id])
+        if (current_user.id == @message.recipient_id)
+            @message.update_attribute(:read, true);
+        end
         @recipient = User.find(@message.recipient_id).alias
+    end
+
+    def update(param)
+        @post.update(param)
     end
 
     def destroy

@@ -6,37 +6,37 @@
                     <%= f.label :title %>
                 </div>
                 <div class="col-md-12">
-                    <%= f.text_field :title %>
+                    <%= f.text_field :title, :placeholder => "Title" %>
                 </div>
             </div>
-            <% if params[:alias] %>
-                <div class="row">
+            <div class="row">
+                <% if params[:alias] %>
                     <div class="col-md-12">
                         <%= f.label :recipient %>
                     </div>
                     <div class="col-md-12">
-                        <%= f.text_field :recipient_id, :value => params[:alias], :readonly => true %>
+                        <%= f.text_field :recipient_id, :value => params[:alias], :readonly => true, :placeholder => "Recipient" %>
                     </div>
-                </div>
-            <% else %>
-                <div class="col-md-12">
-                    <%= f.label :recipient %>
-                </div>
-                <div class="col-md-12">
-                    <%= f.text_field :recipient_id %>
-                </div>
-            <% end %>
+                <% else %>
+                    <div class="col-md-12">
+                        <%= f.label :recipient %>
+                    </div>
+                    <div class="col-md-12">
+                        <%= f.text_field :recipient_id, :placeholder => "Recipient" %>
+                    </div>
+                <% end %>
+            </div>
             <div class="row">
                 <div class="col-md-12">
                     <%= f.label :content %>
                 </div>
                 <div class="col-md-12">
-                    <%= f.text_area :content %>
+                    <%= f.text_area :content, :placeholder => "Content" %>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-12">
-                    <%= f.submit %>
+                    <%= f.submit :class => "flat-rounded-button" %>
                 </div>
             </div>
         <% end %>

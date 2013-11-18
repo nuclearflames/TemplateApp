@@ -1,17 +1,9 @@
 .forums, .topics, .posts {
     text-align: center;
     border-color: gray;
-    label, h3 {
-        display: none;
-    }
     #posts-description {
         max-height: 100px;
         width: 80%;
-    }
-    input, textarea {
-        width: 80%;
-        margin: 0;
-        resize: none;
     }
     .header {
         border-color: gray;
@@ -35,11 +27,6 @@
     }
     .posts-new {
         background-color: $pond;
-        input, textarea {
-            width: 80%;
-            border: 1px solid $darkMist;
-            resize: none;
-        }
         .row {
             background-color: transparent;
             padding: 0;

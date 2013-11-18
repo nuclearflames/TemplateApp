@@ -4,23 +4,20 @@
     </div>
 </div>
 <div class="row">
-    <div class="col-md-12">
-        <div class="row">
-            <div class="col-sm-2">
-                <h3>From</h3>
-            </div>
-            <div class="col-sm-10 message-content">
-                <h3>Message</h3>
-            </div>
-        </div>
+    <div class="col-sm-4">
+        <h3>From</h3>
+    </div>
+    <div class="col-sm-8 message-content">
+        <h3>Message</h3>
     </div>
 </div>
 <% @messages.each do |f|%>
-    <div class="row">
-        <div class="col-sm-2">
+    <div class="row read-<%= f.read %>">
+        <div class="col-sm-4">
             <p><%= get_user(f.user_id).alias %></p>
+            <p>Status: <span class="status"><%= find_status(f) %></span></p>
         </div>
-        <div class="col-sm-10 message-content">
+        <div class="col-sm-8 message-content">
             <p><%= link_to f.title, message_path(f) %></p>
             <p><%= f.content %></p>
             <p><%= link_to "Delete", message_path(f), method: :delete, data: {:confirm => "are you sure?"} %></p>

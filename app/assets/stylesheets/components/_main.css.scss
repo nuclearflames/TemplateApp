@@ -1,11 +1,14 @@
 //Font to be used for the app
 @import url(http://fonts.googleapis.com/css?family=Ropa+Sans);
 
-body {
+* {
     font-family: 'Ropa Sans', sans-serif;
-    background-color: $white;
-    font-size: 16px;
     line-height: initial;
+}
+
+body {
+    font-size: 16px;
+    background-color: $white;
     margin: 0;
 }
 
@@ -21,8 +24,15 @@ a {
     }
 }
 
-p {
-    margin: 5px;
+p, a {
+    margin: 0px;
+    line-height: 26px;
+}
+
+//Labels and h3's don't show on mobile
+label, h3 {
+    font-weight: bold;
+    display: none;
 }
 
 ul {
@@ -31,8 +41,10 @@ ul {
 }
 
 input, textarea {
-    font-family: 'Ropa Sans', sans-serif;
-    font-size: 16px;
+    width: 80%;
+    border: 1px solid $darkMist;
+    resize: none;
+    margin: 0 auto;
 }
 
 .main-sidebar {
@@ -69,9 +81,9 @@ input, textarea {
     background-color: $pond;
     text-align: center;
     z-index: 4;
-    -webkit-box-shadow: 0 10px 10px $pond;
-       -moz-box-shadow: 0 10px 10px $pond;
-            box-shadow: 0 10px 10px $pond;
+    -webkit-box-shadow: 0 5px 10px $pond;
+       -moz-box-shadow: 0 5px 10px $pond;
+            box-shadow: 0 5px 10px $pond;
     a {
         margin: 5px 0;
     }
@@ -86,15 +98,12 @@ input, textarea {
 }
 
 .main-yield {
+    padding: 20px 0;
     z-index: 3;
     background-color: $background;
     text-align: center;
     a {
-        margin: 5px;
         color: $pills;
-    }
-    .row:first-child {
-        background-color: $mist;
     }
 }
 
@@ -149,26 +158,4 @@ input, textarea {
 .errorBox {
     padding: 5px;
     background-color: $error;
-    margin: 5px 0;
-}
-
-//Should be in location partial
-.index-wrapper {
-    text-align: right;
-    .index-overlay {
-        position: relative;
-        padding: 0;
-        img {
-            width: 100%;
-        }
-        .locationOverlayText {
-            position: absolute;
-            top: 0px;
-            right: 0px;
-            background-color: $darkMist;
-            height: 100%;
-            padding: 0 10px 0 10px;
-            vertical-align: middle;
-        }
-    }
 }

@@ -6,8 +6,8 @@ class CreateMessages < ActiveRecord::Migration
         t.string        :title
         t.string        :content
         t.attachment    :attachment
-        t.boolean       :deleted
-        t.boolean       :read
+        t.boolean       :deleted, :default  => false
+        t.boolean       :read, :default  => false
 
       t.timestamps
     end

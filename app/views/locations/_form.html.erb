@@ -1,80 +1,91 @@
-<div class="row">
-    <div class="col-md-12">
-        <%= form_for @location do |f| %>
-            <div class="row">
-                <div class="col-md-12">
-                    <%= f.label :location %>
-                </div>
-                <div class="col-md-12">
-                    <%= f.text_field :location %>
-                </div>
+<%= form_for @location do |f| %>
+    <% if !@location.errors.empty? %>
+        <div class="row">
+            <div class="col-md-12 errorBox">
+                <h4>Error report</h4>
+                <% @location.errors.each do |attribute, error| %>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <%= attribute %>
+                            <%= error %>
+                        </div>
+                    </div>
+                <% end %>
             </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <%= f.label :city %>
-                </div>
-                <div class="col-md-12">
-                    <%= f.text_field :city %>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <%= f.label :town %>
-                </div>
-                <div class="col-md-12">
-                    <%= f.text_field :town %>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <%= f.label :street %>
-                </div>
-                <div class="col-md-12">
-                    <%= f.text_field :street %>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <%= f.label :houseno %>
-                </div>
-                <div class="col-md-12">
-                    <%= f.text_field :houseno %>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <%= f.label :postcode %>
-                </div>
-                <div class="col-md-12">
-                    <%= f.text_field :postcode %>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <%= f.label :lat %>
-                </div>
-                <div class="col-md-12">
-                    <%= f.text_field :lat %>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <%= f.label :lng %>
-                </div>
-                <div class="col-md-12">
-                    <%= f.text_field :lng %>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <%= f.submit %>
-                </div>
-            </div>
-        <% end %>
+        </div>
+    <% end %>
+    <div class="row">
+        <div class="col-md-12">
+            <%= f.label :country %>
+        </div>
+        <div class="col-md-12">
+            <%= f.text_field :country, :placeholder => "Country" %>
+        </div>
     </div>
-</div>
+    <div class="row">
+        <div class="col-md-12">
+            <%= f.label :city %>
+        </div>
+        <div class="col-md-12">
+            <%= f.text_field :city, :placeholder => "City" %>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <%= f.label :town %>
+        </div>
+        <div class="col-md-12">
+            <%= f.text_field :town, :placeholder => "Town" %>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <%= f.label :street %>
+        </div>
+        <div class="col-md-12">
+            <%= f.text_field :street, :placeholder => "Street" %>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <%= f.label "House Number" %>
+        </div>
+        <div class="col-md-12">
+            <%= f.text_field :houseno, :placeholder => "House Number" %>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <%= f.label :postcode %>
+        </div>
+        <div class="col-md-12">
+            <%= f.text_field :postcode, :placeholder => "Postocde" %>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <%= f.label :lattitude %>
+        </div>
+        <div class="col-md-12">
+            <%= f.text_field :lat, :placeholder => "Lattitude" %>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <%= f.label :longnitude %>
+        </div>
+        <div class="col-md-12">
+            <%= f.text_field :lng, :placeholder => "Longnitude" %>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <%= f.submit "Submit Location", :class => "flat-rounded-button" %>
+        </div>
+    </div>
+<% end %>
 <div class="row">
-    <div class="col-md-12">
-        <div id="map-canvas" class="locations"></div>
+    <div class="col-md-12 gMap">
+        <div id="locations-map-new" class="maps"></div>
     </div>
 </div>
