@@ -85,14 +85,16 @@ $(function () {
         },
 
         init = function () {
-            initalizeMap($(".maps")[0], function () {
-                if ($("#locations-map-index").length) {
-                    gMapIndex();
-                }
-                if ($("#locations-map-new").length) {
-                    gMapNew();
-                }
-            });
+            if ($(".maps").length) {
+                initalizeMap($(".maps")[0], function () {
+                    if ($("#locations-map-index").length) {
+                        gMapIndex();
+                    }
+                    if ($("#locations-map-new").length) {
+                        gMapNew();
+                    }
+                });
+            }
         };
 
     init: init();

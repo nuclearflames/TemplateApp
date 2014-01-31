@@ -1,7 +1,5 @@
 .user-yield {
     form {
-        label, input {
-        }
         .row {
             line-height: 30px;
             input[type="submit"] {
@@ -9,14 +7,13 @@
             }
         }
         .row:nth-child(even) {
-        	background-color: $mist;
+        	background-color: $sea;
         }
         .row {
-            .col-md-6:nth-child(even) {
-                background-color: $mist;
-                min-height: 60px;
+            .col-sm-6:nth-child(even) {
+                background-color: $sea;
                 input {
-                    margin: 10px auto;
+                    margin: 4px auto;
                 }
             }
         }
