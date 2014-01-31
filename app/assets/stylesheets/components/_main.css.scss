@@ -7,21 +7,25 @@
 }
 
 body {
-    font-size: 16px;
-    background-color: $white;
+    font-size: 1.5em;
     margin: 0;
+    background-color: $white;
+    color: $maelstrom;
 }
 
 a {
     display: inline-block;
-    color: $white;
+    color: $maelstrom;
     text-decoration: none;
-    font-weight: bold;
+    text-decoration: underline;
     transition: color 0.25s;
     &:hover {
         color: $storm;
-        text-decoration: underline;
     }
+}
+
+h2 {
+    font-weight: normal;
 }
 
 p, a {
@@ -31,7 +35,6 @@ p, a {
 
 //Labels and h3's don't show on mobile
 label, h3 {
-    font-weight: bold;
     display: none;
 }
 
@@ -41,10 +44,13 @@ ul {
 }
 
 input, textarea {
-    width: 80%;
+    width: 90%;
     border: 1px solid $darkMist;
     resize: none;
     margin: 0 auto;
+    padding: 10px;
+    background-color: $mist;
+    border: 1px solid $storm;
 }
 
 .main-sidebar {
@@ -53,6 +59,7 @@ input, textarea {
     text-align: center;
     z-index: 5;
     a {
+        color: $mist;
         display: block;
         padding: 10px 0;
         transition: 0.25s;
@@ -60,12 +67,22 @@ input, textarea {
            -moz-box-shadow: 0 0 10px $pills;
                 box-shadow: 0 0 10px $pills;
         z-index: 5;
-        span {
-            display: block;
-        }
         &:hover {
-            background-color: $pills;
+            background-color: $storm;
+            color: $goldfish;
         }
+        background-image: -webkit-gradient(
+            linear,
+            right bottom,
+            left top,
+            color-stop(0, $pills),
+            color-stop(1, $storm)
+        );
+        background-image: -o-linear-gradient(left top, $pills 10%, $storm 30%);
+        background-image: -moz-linear-gradient(left top, $pills 10%, $storm 30%);
+        background-image: -webkit-linear-gradient(left top, $pills 10%, $storm 30%);
+        background-image: -ms-linear-gradient(left top, $pills 10%, $storm 30%);
+        background-image: linear-gradient(to left top, $pills 10%, $storm 30%);
     }
     div {
         display: none;
@@ -81,9 +98,7 @@ input, textarea {
     background-color: $pond;
     text-align: center;
     z-index: 4;
-    -webkit-box-shadow: 0 5px 10px $pond;
-       -moz-box-shadow: 0 5px 10px $pond;
-            box-shadow: 0 5px 10px $pond;
+    padding: 5px 0 5px 0;
     a {
         margin: 5px 0;
     }
@@ -100,62 +115,46 @@ input, textarea {
 .main-yield {
     padding: 20px 0;
     z-index: 3;
-    background-color: $background;
     text-align: center;
     a {
-        color: $pills;
+        font-size: 1.4em;
     }
 }
 
-.main {
-    margin-right: auto;
-    margin-left: auto;
-    position: relative;
-    -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-    -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-}
+#content, #sidebar {
+    -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 1), 0 0 40px rgba(0, 0, 0, 0.3) inset;
+    -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 1), 0 0 40px rgba(0, 0, 0, 0.3) inset;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 1), 0 0 40px rgba(0, 0, 0, 0.3) inset;
+    &:before, &:after {
+        content:"";
+        position:absolute;
+        z-index:-1;
+        top: 0;
+        bottom: 0;
+        left: 10px;
+        right: 10px;
+    }
 
-.main:before, .main:after
-{
-    content:"";
-    position:absolute;
-    z-index:-1;
-//    -webkit-box-shadow:0 0 20px rgba(0,0,0,0.8);
-//    -moz-box-shadow:0 0 20px rgba(0,0,0,0.8);
-//    box-shadow:0 0 20px rgba(0,0,0,0.8);
-    top: 0;
-    bottom: 0;
-    left: 10px;
-    right: 10px;
-    -moz-border-radius: 100px / 10px;
-    border-radius: 100px / 10px;
-}
-
-.main:after
-{
-    right: 10px;
-    left: auto;
-    -webkit-transform: skew(8deg) rotate(3deg);
-    -moz-transform: skew(8deg) rotate(3deg);
-    -ms-transform: skew(8deg) rotate(3deg);
-    -o-transform: skew(8deg) rotate(3deg);
-    transform: skew(8deg) rotate(3deg);
+    &:after {
+        right: 10px;
+        left: auto;
+        -webkit-transform: skew(8deg) rotate(3deg);
+        -moz-transform: skew(8deg) rotate(3deg);
+        -ms-transform: skew(8deg) rotate(3deg);
+        -o-transform: skew(8deg) rotate(3deg);
+        transform: skew(8deg) rotate(3deg);
+    }
 }
 
 .main-information {
     text-align: center;
-    background-color: $pills;
-    -webkit-box-shadow: 0 -1px 10px $pills;
-       -moz-box-shadow: 0 -1px 10px $pills;
-            box-shadow: 0 -1px 10px $pills;
-}
-
-.registerBox {
-    background-color: $storm;
+    background-color: $pond;
 }
 
 .errorBox {
-    padding: 5px;
-    background-color: $error;
+    padding: 0 0 25px 0;
+    font-size: 1.2em;
+    div:first-child {
+        background-color: $error;
+    }
 }

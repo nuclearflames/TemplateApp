@@ -9,34 +9,41 @@
 <body>
     <div class="container main">
         <div class="row">
-            <div class="col-sm-12 content">
+            <div class="col-sm-2" id="sidebar">
                 <div class="row main-sidebar">
-                    <div class="col-sm-1 visible-xs">
+                    <div class="col-sm-12 visible-xs">
                         <span>
                             <%=link_to "", :class => "menu" do %>
-                                <span><i class="fa fa-list fa-2x"></i> Menu</span>
+                                <i class="fa fa-list fa-2x"></i>
+                                <span>Menu</span>
                             <% end %>
                         </span>
                     </div>
-                    <div class="col-sm-2">
+                    <div class="col-sm-12">
+                        <%= link_to "/" do %>
+                            <i class="fa fa-home fa-2x"></i> 
+                            <span>Home</span>
+                        <% end %>
+                    </div>
+                    <div class="col-sm-12">
                         <%= link_to "/photos" do %>
                             <i class="fa fa-picture-o fa-2x"></i>
                             <span>Photos</span>
                         <% end %>
                     </div>
-                    <div class="col-sm-2">
+                    <div class="col-sm-12">
                         <%= link_to "/forums" do %>
                             <i class="fa fa-users fa-2x"></i>
                             <span>Forums</span>
                         <% end %>
                     </div>
-                    <div class="col-sm-2">
+                    <div class="col-sm-12">
                         <%= link_to "/search" do %>
                             <i class="fa fa-search fa-2x"></i>
                             <span>Search</span>
                         <% end %>
                     </div>
-                    <div class="col-sm-2">
+                    <div class="col-sm-12">
                         <% if (current_user) %>
                             <%= link_to "/messages" do %>
                                 <i class="fa fa-envelope-o fa-2x"></i>
@@ -50,21 +57,20 @@
                         <% end %>
                     </div>
                     <% if user_signed_in? %>
-                        <div class="col-sm-2">
+                        <div class="col-sm-12">
                             <%= link_to "/" + current_user.alias do %>
                                 <i class="fa fa-user fa-2x"></i>
                                 <span>View Profile</span>
                             <% end %>
-
                         </div>
-                        <div class="col-sm-2">
+                        <div class="col-sm-12">
                             <%= link_to "/users/sign_out", :method => :delete do %>
                                 <i class="fa fa-sign-out fa-2x"></i>
                                 <span>Logout</span>
                             <% end %>
                         </div>
                     <% else %>
-                        <div class="col-sm-4">
+                        <div class="col-sm-12">
                             <%= link_to "/users/sign_in" do %>
                                 <i class="fa fa-sign-in fa-2x"></i>
                                 <span>Login</span>
@@ -72,13 +78,9 @@
                         </div>
                     <% end %>
                 </div>
+            </div>
+            <div class="col-sm-10" id="content">
                 <div class="row main-title">
-                    <div class="col-sm-2">
-                        <%= link_to "/" do %>
-                            <i class="fa fa-home fa-2x"></i> 
-                            <span>Home</span>
-                        <% end %>
-                    </div>
                     <div class="col-sm-4">
                         <h1><%= global_website_name_linked %></h1>
                     </div>

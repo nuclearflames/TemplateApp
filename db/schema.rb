@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(:version => 20130921125312) do
 
   create_table "locations", :force => true do |t|
     t.integer  "user_id"
-    t.string   "country"
+    t.string   "location"
     t.string   "city"
     t.string   "town"
     t.string   "street"
@@ -52,10 +52,10 @@ ActiveRecord::Schema.define(:version => 20130921125312) do
     t.string   "attachment_content_type"
     t.integer  "attachment_file_size"
     t.datetime "attachment_updated_at"
-    t.boolean  "deleted",                 :default => false
-    t.boolean  "read",                    :default => false
-    t.datetime "created_at",                                 :null => false
-    t.datetime "updated_at",                                 :null => false
+    t.boolean  "deleted"
+    t.boolean  "read"
+    t.datetime "created_at",              :null => false
+    t.datetime "updated_at",              :null => false
   end
 
   create_table "photos", :force => true do |t|
