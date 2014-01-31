@@ -1,10 +1,6 @@
 .forums, .topics, .posts {
     text-align: center;
     border-color: gray;
-    #posts-description {
-        max-height: 100px;
-        width: 80%;
-    }
     .header {
         border-color: gray;
         font-weight: bold;
@@ -13,17 +9,56 @@
         background-color: $mist;
     }
     .title, .input {
-        background-color: $mist;
+       // background-color: $mist;
+    }
+    textarea {
+        resize: vertical;
+        height: 100px;
     }
     .description {
-        background-color: $mist;
+       // background-color: $mist;
     }
     .footer p {
         padding: 0;
         margin: 10px 0;
     }
+    .reply-left, .reply-right {
+        padding: 10px 0;
+        div {
+            display: inline-block;
+        }
+        p {
+            display: inline-block;
+        }
+    }
+    .reply-left {
+        text-align: left;
+        .title, .alias {
+            width: 30%;
+            left: 70%;
+        }
+        .title {
+            position: relative;
+            width: 30%;
+        }
+        .alias {
+            position: absolute;
+            width: 30%;
+            left: 0%;
+        }
+        .description {
+            position: relative;
+            width: 40%;
+        }
+    }
+    .reply-right {
+        text-align: right;
+        .title, .alias {
+            width: 30%;
+        }
+    }
     .row:nth-child(odd) {
-        background-color: $mist;
+        //background-color: $mist;
     }
     .posts-new {
         background-color: $pond;
@@ -32,7 +67,7 @@
             padding: 0;
         }
         .posts-new-container {
-            margin: 10px;
+            margin: 10px 0;
         }
     }
 }

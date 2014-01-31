@@ -4,19 +4,38 @@
         <p>Topic description: <%= get_topic(params[:id]).description %></p>
     </div>
 </div>
-<% @posts.each do |f|%>
-    <div class="row">
-        <div class="col-sm-2">
-            <p><%= f.title %></p>
-        </div>
-        <div class="col-sm-7">
-            <p><%= f.description %></p>
-        </div>
-        <div class="col-sm-3">
-            <span><%= link_to get_user(f.user_id).alias, "/" + get_user(f.user_id).alias %> <br /> <%= f.created_at %></span>
+<% @posts.each_with_index do |f, index|%>
+    <% #posts are on opposing sides but stay the same side if consecutive posts %>
+    <div class="row reply-<%= @pointer %>">
+        <% if @pointer == "left" %>
+            <div class="col-sm-11 col-sm-offset-1">
+        <% else %>
+            <div class="col-sm-10 col-sm-offset-2">
+        <% end %>
+            <div class="row">
+                <div class="col-sm-3">
+                    <p><%= f.title %></p>
+                </div>
+                <div class="col-sm-6">
+                    <p><%= f.description %></p>
+                </div>
+                <div class="col-sm-3">
+                    <span><%= link_to get_user(f.user_id).alias, "/" + get_user(f.user_id).alias %></span>
+                    <%= f.created_at %>
+                </div>
+            </div>
         </div>
     </div>
+    <% if @posts.at(index - 1).user.alias == f.user.alias %>
+        <% if @pointer == "left" %>
+            <% @pointer = "right" %>
+        <% else %>
+            <% @pointer = "left" %>
+        <% end %>
+    <% end %>
 <% end %>
+
+<%= paginate @posts %>
 <%= no_results(@posts, "posts").html_safe %>
 
 <%= render :partial => "posts/form" %>
