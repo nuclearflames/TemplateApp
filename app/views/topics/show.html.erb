@@ -10,18 +10,20 @@
         <% if @pointer == "left" %>
             <div class="col-sm-11 col-sm-offset-1">
         <% else %>
-            <div class="col-sm-10 col-sm-offset-2">
+            <div class="col-sm-11">
         <% end %>
             <div class="row">
-                <div class="col-sm-3">
-                    <p><%= f.title %></p>
+                <div>
+                    <div class="col-sm-3 title">
+                        <p><%= f.title %></p>
+                    </div>
+                    <div class="col-sm-6 description">
+                        <p><%= f.description %></p>
+                    </div>
                 </div>
-                <div class="col-sm-6">
-                    <p><%= f.description %></p>
-                </div>
-                <div class="col-sm-3">
-                    <span><%= link_to get_user(f.user_id).alias, "/" + get_user(f.user_id).alias %></span>
-                    <%= f.created_at %>
+                <div class="col-sm-3 alias">
+                    <span><%= link_to get_user(f.user_id).alias, "/" + get_user(f.user_id).alias %>
+                    <%= f.created_at %></span>
                 </div>
             </div>
         </div>
