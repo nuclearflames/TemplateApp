@@ -6,10 +6,10 @@ $(function () {
             active: false
         }
     });
-    $(".main-sidebar").find(".menu").click(function (i) {
-        var val = $(".main-sidebar");
+    $("#sidebar").find(".menu").click(function (i) {
+        var val = $("#sidebar");
         i.preventDefault();
-        if ($(".main-sidebar.visible").length) {
+        if ($("#sidebar.visible").length) {
             val.removeClass("visible");
         } else {
             val.addClass("visible");

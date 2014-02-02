@@ -8,9 +8,6 @@
     &.row:nth-child(odd) {
         background-color: $mist;
     }
-    .title, .input {
-       // background-color: $mist;
-    }
     textarea {
         resize: vertical;
         height: 100px;
@@ -18,56 +15,105 @@
     .description {
        // background-color: $mist;
     }
-    .footer p {
-        padding: 0;
-        margin: 10px 0;
-    }
     .reply-left, .reply-right {
-        padding: 10px 0;
-        div {
-            display: inline-block;
-        }
-        p {
-            display: inline-block;
+        padding: 20px 0;
+        .title, .description {
+            min-height: 50px;
         }
     }
     .reply-left {
         text-align: left;
-        .title, .alias {
-            width: 30%;
-            left: 70%;
+        .alias {
+            text-align: right;        
+        }
+        .title, .description {
+            background-color: $storm;
         }
         .title {
-            position: relative;
-            width: 30%;
-        }
-        .alias {
-            position: absolute;
-            width: 30%;
-            left: 0%;
+            border-width: 1px 0 1px 1px;
+            border-style: solid;
+            border-color: $maelstrom;
+            border-radius: 15px 0 0 15px;
         }
         .description {
-            position: relative;
-            width: 40%;
+            border-width: 1px 1px 1px 0;
+            border-style: solid;
+            border-color: $maelstrom;
+            border-radius: 0 15px 0 0;
+            &:after {
+                content: " ";
+                right: -20px;
+                bottom: 0px;
+                position: absolute;
+                border-style: solid;
+                border-width: 20px 0 0 20px;
+                border-color: transparent transparent transparent $storm;
+            }
+            &:before {
+                content: " ";
+                right: -22px;
+                bottom: -1px;
+                position: absolute;
+                border-style: solid;
+                border-width: 21px 0 0 21px;
+                border-color: transparent transparent transparent $maelstrom;
+            }
         }
     }
     .reply-right {
         text-align: right;
-        .title, .alias {
-            width: 30%;
+        .alias {
+            text-align: left;
+            float: left;
         }
+        .title, .description {
+            background-color: $pills;
+        }
+        .title {
+            float: right;
+            border-width: 1px 1px 1px 0;
+            border-style: solid;
+            border-color: $storm;
+            border-radius: 0 15px 15px 0;
+        }
+        .description {
+            float: right;
+            border-width: 1px 0 1px 1px;
+            border-style: solid;
+            border-color: $storm;
+            border-radius: 15px 0 0 0;
+            &:after {
+                content: " ";
+                left: -20px;
+                bottom: 0px;
+                position: absolute;
+                border-style: solid;
+                border-width: 0 0 20px 20px;
+                border-color: transparent transparent $pills transparent;
+            }
+            &:before {
+                content: " ";
+                left: -22px;
+                bottom: -1px;
+                position: absolute;
+                border-style: solid;
+                border-width: 0 0 21px 21px;
+                border-color: transparent transparent $storm transparent;
+            }
+        }
+    }
+    .footer p {
+        padding: 0;
+        margin: 10px 0;
     }
     .row:nth-child(odd) {
         //background-color: $mist;
     }
     .posts-new {
-        background-color: $pond;
+        background-color: $pills;
         .row {
             background-color: transparent;
             padding: 0;
-        }
-        .posts-new-container {
-            margin: 10px 0;
         }
     }
 }
