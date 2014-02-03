@@ -29,9 +29,9 @@ class TopicsController < ApplicationController
     end
 
     def show
-        @posts = Topic.find(params[:id]).posts.page(params[:page])
+        @posts = Topic.find(params[:id]).posts("created_at desc").page(params[:page])
         @post = Post.new
-        @pointer = "left"
+        @pointer = true
     end
 
     def destroy

@@ -6,35 +6,36 @@
 </div>
 <% @posts.each_with_index do |f, index|%>
     <% #posts are on opposing sides but stay the same side if consecutive posts %>
+    <% if @posts.at(index - 1).user.alias == f.user.alias %>
+        <% @pointer = @pointer %>
+    <% else %>
+        <% @pointer = !@pointer %>
+    <% end %>
     <div class="row reply-<%= @pointer %>">
-        <% if @pointer == "left" %>
+        <% if @pointer == false %>
             <div class="col-sm-11 col-sm-offset-1">
         <% else %>
             <div class="col-sm-11">
         <% end %>
             <div class="row">
-                <div>
-                    <div class="col-sm-3 title">
-                        <p><%= f.title %></p>
+                <div class="col-sm-9 bubble">
+                    <div class="row">
+                        <div class="col-sm-12 title">
+                            <p><%= f.title %></p>
+                        </div>
                     </div>
-                    <div class="col-sm-6 description">
-                        <p><%= f.description %></p>
+                    <div class="row">
+                        <div class="col-sm-12 description">
+                            <p><%= f.description %></p>
+                        </div>
                     </div>
                 </div>
                 <div class="col-sm-3 alias">
-                    <span><%= link_to get_user(f.user_id).alias, "/" + get_user(f.user_id).alias %>
-                    <%= f.created_at %></span>
+                    <span><%= f.created_at %><%= link_to get_user(f.user_id).alias, "/" + get_user(f.user_id).alias %></span>
                 </div>
             </div>
         </div>
     </div>
-    <% if @posts.at(index - 1).user.alias == f.user.alias %>
-        <% if @pointer == "left" %>
-            <% @pointer = "right" %>
-        <% else %>
-            <% @pointer = "left" %>
-        <% end %>
-    <% end %>
 <% end %>
 
 <%= paginate @posts %>

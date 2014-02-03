@@ -12,34 +12,43 @@
         resize: vertical;
         height: 100px;
     }
-    .description {
-       // background-color: $mist;
+    .title {
+        font-size: 1.2em;
+        text-decoration: underline;    
     }
-    .reply-left, .reply-right {
+    .alias {
+        bottom: 0px;
+        position: absolute;
+        a {
+            display: block;
+        }
+    }
+    .reply-false, .reply-true {
         padding: 20px 0;
-        .title, .description {
-            min-height: 50px;
-        }
     }
-    .reply-left {
-        text-align: left;
-        .alias {
-            text-align: right;        
-        }
+    .reply-false {
         .title, .description {
             background-color: $storm;
         }
+        text-align: left;
+        .bubble {
+            float: left;
+        }
+        .alias {
+            text-align: right;
+            right: 0px;
+        }
         .title {
-            border-width: 1px 0 1px 1px;
+            border-width: 1px 1px 0 1px;
             border-style: solid;
             border-color: $maelstrom;
-            border-radius: 15px 0 0 15px;
+            border-radius: 15px 15px 0 0;
         }
         .description {
-            border-width: 1px 1px 1px 0;
+            border-width: 0 1px 1px 1px;
             border-style: solid;
             border-color: $maelstrom;
-            border-radius: 0 15px 0 0;
+            border-radius: 0 0 0 15px;
             &:after {
                 content: " ";
                 right: -20px;
@@ -60,28 +69,31 @@
             }
         }
     }
-    .reply-right {
+    .reply-true {
         text-align: right;
-        .alias {
-            text-align: left;
-            float: left;
-        }
         .title, .description {
             background-color: $pills;
         }
+        .bubble {
+            float: right;
+        }
+        .alias {
+            text-align: left;
+            left: 0px;
+        }
         .title {
             float: right;
-            border-width: 1px 1px 1px 0;
+            border-width: 1px 1px 0 1px;
             border-style: solid;
             border-color: $storm;
-            border-radius: 0 15px 15px 0;
+            border-radius: 15px 15px 0 0;
         }
         .description {
             float: right;
-            border-width: 1px 0 1px 1px;
+            border-width: 0 1px 1px 1px;
             border-style: solid;
             border-color: $storm;
-            border-radius: 15px 0 0 0;
+            border-radius: 0 0 15px 0;
             &:after {
                 content: " ";
                 left: -20px;
