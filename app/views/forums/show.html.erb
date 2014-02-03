@@ -21,17 +21,17 @@
 <% @topics.each do |f|%>
     <div class="row">
         <div class="col-sm-3">
-            <p><%= link_to f.title, topic_path(f.id) %></p>
-            <p><%= f.description %></p>
+            <p><span class="visible-xs">Title:</span> <%= link_to f.title, topic_path(f.id) %></p>
+            <p><span class="visible-xs">Description:</span> <%= f.description %></p>
         </div>
         <div class="col-sm-3">
-            <p><%= f.posts.count %></p>
+            <p><span class="visible-xs">Post count:</span> <%= f.posts.count %></p>
         </div>
         <div class="col-sm-3">
-            <p><%= get_user(f.user_id).alias %></p>
+            <p><span class="visible-xs">Owned by:</span> <%= get_user(f.user_id).alias %></p>
         </div>
         <div class="col-sm-3">
-            <p><%= f.created_at %></p>
+            <p><span class="visible-xs">Created at:</span> <%= f.created_at %></p>
             <% if current_user.id === f.user_id %>
                 <%= render "indexShowEdit", :topic => f %>
             <% end %>

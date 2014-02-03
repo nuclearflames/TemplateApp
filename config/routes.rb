@@ -77,6 +77,7 @@ TemplateApp::Application.routes.draw do
   match "/search/edit" => "locations#edit"
   match "/search/new" => "locations#new"
   match "/search/show" => "locations#show", :as => :user
+  match "/topics/latest/:alias" => "topics#latest"
 
   #place at end to last search profiles
   match "/:alias" => "root#show#:alias"

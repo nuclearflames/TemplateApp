@@ -8,23 +8,38 @@
     &.row:nth-child(odd) {
         background-color: $mist;
     }
+    span.visible-xs {
+        display: inline-block !important;
+    }
     textarea {
         resize: vertical;
         height: 100px;
     }
-    .title {
-        font-size: 1.2em;
-        text-decoration: underline;    
-    }
-    .alias {
-        bottom: 0px;
-        position: absolute;
-        a {
-            display: block;
+    #latest {
+        .alias {
+            position: relative;
         }
     }
     .reply-false, .reply-true {
         padding: 20px 0;
+        .bubble {
+            display: block;
+            width: 80%;
+        }
+        .title {
+            font-size: 1.2em;
+            text-decoration: underline;    
+        }
+        .title, .description {
+            width: 100%;
+        }
+        .alias {
+            bottom: 0px;
+            position: absolute;
+            a {
+                display: block;
+            }
+        }
     }
     .reply-false {
         .title, .description {

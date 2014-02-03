@@ -12,7 +12,7 @@
     </div>
 </div>
 <% @messages.each do |f|%>
-    <div class="row read-<%= f.read %>">
+    <div class="row read-<%= find_status(f) %>">
         <div class="col-sm-4">
             <p><%= get_user(f.user_id).alias %></p>
             <p>Status: <span class="status"><%= find_status(f) %></span></p>
