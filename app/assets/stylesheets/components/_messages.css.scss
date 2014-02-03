@@ -1,9 +1,6 @@
 .messages, .sentmessages {
-    .row:nth-child(odd) {
-        background-color: $mist;
-    }
     .read-Unread {
-        background-color: $storm;
+        background-color: $seabreeze;
     }
     .status {
         font-weight: bold;
@@ -12,11 +9,6 @@
         display: inline;
         div {
             display: inline;
-        }
-    }
-    .message-content {
-        p,h3 {
-            padding-right: 20px;
         }
     }
 }

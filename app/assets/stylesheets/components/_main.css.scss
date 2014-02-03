@@ -33,6 +33,11 @@ p, a {
     line-height: 26px;
 }
 
+
+span.visible-xs {
+    display: inline-block !important;
+}
+
 //Labels and h3's don't show on mobile
 label, h3 {
     display: none;
@@ -122,6 +127,7 @@ input, textarea {
 .main-yield {
     z-index: 3;
     text-align: center;
+    padding: 20px 0;
     a {
         font-size: 1.4em;
     }

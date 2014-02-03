@@ -18,12 +18,13 @@
             <p>Status: <span class="status"><%= find_status(f) %></span></p>
         </div>
         <div class="col-sm-8 message-content">
-            <p><%= link_to f.title, message_path(f) %></p>
-            <p><%= f.content %></p>
-            <p><%= link_to "Delete", message_path(f), method: :delete, data: {:confirm => "are you sure?"} %></p>
-            <p><%= f.created_at %></p>
+            <p><span class="visible-xs">Title:</span> <%= link_to f.title, message_path(f) %></p>
+            <p><span class="visible-xs">Content:</span> <%= f.content %></p>
+            <p><span class="visible-xs">Your actions:</span> <%= link_to "Delete", message_path(f), method: :delete, data: {:confirm => "are you sure?"} %></p>
+            <p><span class="visible-xs">Sent at:</span> <%= f.created_at %></p>
         </div>
     </div>
+    <hr />
 <% end %>
 <%= no_results(@messages, "messages").html_safe %>
 <div class="row">

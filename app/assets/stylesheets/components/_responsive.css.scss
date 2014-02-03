@@ -63,9 +63,7 @@
             text-align: right;
         }
     }
-    .forums, .topics, .posts {
-        span.visible-xs {
-            display: none !important;
-        }
+    span.visible-xs {
+        display: none !important;
     }
 }
