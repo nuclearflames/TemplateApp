@@ -13,6 +13,9 @@ class TopicsController < ApplicationController
         @topic = Topic.new
     end
 
+    def latest
+    end
+
     def create
         @topic = Topic.new(params[:topic])
         @topic.user_id = current_user.id

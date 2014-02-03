@@ -18,14 +18,14 @@
 <% @forums.each do |f|%>
     <div class="row">
         <div class="col-sm-6">
-            <p><%= link_to f.title, forum_path(f.id) %></p>
-            <p><%= f.description %></p>
+            <p><span class="visible-xs">Title:</span> <%= link_to f.title, forum_path(f.id) %></p>
+            <p><span class="visible-xs">Description:</span> <%= f.description %></p>
         </div>
         <div class="col-sm-3">
-            <p><%= f.topics.count %></p>
+            <p><span class="visible-xs">Topic count:</span> <%= f.topics.count %></p>
         </div>
         <div class="col-sm-3">
-            <p><%= get_user(f.user_id).alias %></p>
+            <p><span class="visible-xs">Owned by:</span> <%= get_user(f.user_id).alias %></p>
             <% if current_user.id === f.user_id %>
                 <%= render "indexEdit", :forum => f %>
             <% end %>

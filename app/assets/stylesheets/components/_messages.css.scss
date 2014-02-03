@@ -1,9 +1,9 @@
 .messages, .sentmessages {
-    .read-false {
-        background-color: $darkMist;
-    }
     .row:nth-child(odd) {
         background-color: $mist;
+    }
+    .read-Unread {
+        background-color: $storm;
     }
     .status {
         font-weight: bold;
