@@ -48,6 +48,7 @@ $(function () {
             google.maps.event.addDomListener(window, 'load', locationsMap);
             callback();
         },
+
         gMapIndex = function () {
             this.data;
             $.ajax({
@@ -60,6 +61,7 @@ $(function () {
                 }
             });
         },
+
         fillMapIndex = function (data) {
             for (var i = 0; i < data.length; i++) {
                 if (data[i].location.lat != "") {
@@ -84,11 +86,39 @@ $(function () {
             google.maps.event.addListener(marker, 'dragend', function () { geoCodeFromLatLng(marker.position) });
         },
 
+
+        sliderhMapRefresh = function (slider) {
+            $("#near-distance").text($(slider).slider("values", 0));
+            $("#far-distance").text($(slider).slider("values", 1));
+        },
+
+        generateRangeSlider = function (id) {
+
+            $(id).slider({
+                range: true,
+                min: 0,
+                max: 50,
+                step: 1,
+                values: [ 0, 50 ],
+                slide: function () {
+                    gMapIndex();
+                    sliderhMapRefresh($(".slider"));
+                }
+            });
+        },
+
+
+
         init = function () {
             if ($(".maps").length) {
                 initalizeMap($(".maps")[0], function () {
                     if ($("#locations-map-index").length) {
                         gMapIndex();
+                        if ($(".slider").length) {
+                            if($("#distance-slider").length) {
+                                generateRangeSlider($("#distance-slider"));
+                            }
+                        }
                     }
                     if ($("#locations-map-new").length) {
                         gMapNew();

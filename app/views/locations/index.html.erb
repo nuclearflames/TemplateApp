@@ -13,21 +13,22 @@
         <h4>Search by</h4>
     </div>
 </div>
+
 <%= fields_for "search[params]" do |f| %>
     <div class="row">
-        <div class="col-sm-6">
-            <p>asd</p>
+        <div class="col-sm-2 col-sm-offset-1">
+            <p>Distance:</p> <span id="near-distance"></span>km-<span id="far-distance"></span>km
         </div>
-        <div class="col-sm-6">
-            <%= f.check_box "sad" %>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-sm-12">
-            <%= f.submit "Search", :class => "flat-rounded-button" %>
+        <div class="col-sm-7 col-sm-offset-1">
+            <div id="distance-slider" class="slider"></div>
         </div>
     </div>
 <% end %>
+<div class="row">
+    <div class="col-sm-12">
+        <h2>User profiles</h2>
+    </div>
+</div>
 <div class="row">
     <% @users.each do |f|%>
         <div class="col-sm-3 index-wrapper">
