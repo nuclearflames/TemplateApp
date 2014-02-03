@@ -1,3 +1,14 @@
+<div class="row">
+    <div class="col-md-12 gMap">
+        <p>Drag the marker to your location</p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12 gMap">
+        <div id="locations-map-new" class="maps"></div>
+    </div>
+</div>
+
 <%= form_for @location do |f| %>
     <% if !@location.errors.empty? %>
         <div class="row">
@@ -16,66 +27,14 @@
     <% end %>
     <div class="row">
         <div class="col-md-12">
-            <%= f.label :country %>
-        </div>
-        <div class="col-md-12">
-            <%= f.text_field :country, :placeholder => "Country" %>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12">
-            <%= f.label :city %>
-        </div>
-        <div class="col-md-12">
-            <%= f.text_field :city, :placeholder => "City" %>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12">
-            <%= f.label :town %>
-        </div>
-        <div class="col-md-12">
-            <%= f.text_field :town, :placeholder => "Town" %>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12">
-            <%= f.label :street %>
-        </div>
-        <div class="col-md-12">
-            <%= f.text_field :street, :placeholder => "Street" %>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12">
-            <%= f.label "House Number" %>
-        </div>
-        <div class="col-md-12">
-            <%= f.text_field :houseno, :placeholder => "House Number" %>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12">
-            <%= f.label :postcode %>
-        </div>
-        <div class="col-md-12">
-            <%= f.text_field :postcode, :placeholder => "Postocde" %>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12">
-            <%= f.label :lattitude %>
-        </div>
-        <div class="col-md-12">
-            <%= f.text_field :lat, :placeholder => "Lattitude" %>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12">
-            <%= f.label :longnitude %>
-        </div>
-        <div class="col-md-12">
-            <%= f.text_field :lng, :placeholder => "Longnitude" %>
+            <%= f.hidden_field :country, :placeholder => "Country" %>
+            <%= f.hidden_field :city, :placeholder => "City" %>
+            <%= f.hidden_field :town, :placeholder => "Town" %>
+            <%= f.hidden_field :street, :placeholder => "Street" %>
+            <%= f.hidden_field :houseno, :placeholder => "House Number" %>
+            <%= f.hidden_field :postcode, :placeholder => "Postocde" %>
+            <%= f.hidden_field :lat, :placeholder => "Lattitude" %>
+            <%= f.hidden_field :lng, :placeholder => "Longnitude" %>
         </div>
     </div>
     <div class="row">
@@ -84,8 +43,3 @@
         </div>
     </div>
 <% end %>
-<div class="row">
-    <div class="col-md-12 gMap">
-        <div id="locations-map-new" class="maps"></div>
-    </div>
-</div>

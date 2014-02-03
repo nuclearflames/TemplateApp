@@ -4,14 +4,10 @@
     }
 
     .index-wrapper {
-        background-color: $darkMist;
-        text-align: right;
+        border: 1px solid $seabreeze;
         padding: 10px 0;
         img {
-            width: 100%;
-        }
-        .locationOverlayText {
-            vertical-align: middle;
+            max-width: 80px;
         }
     }
     .gMap {

@@ -4,5 +4,5 @@ class Location < ActiveRecord::Base
     # Setup accessible (or protected) attributes for your model
     attr_accessible :user_id, :country, :city, :town, :street, :houseno, :postcode, :lat, :lng
 
-    validates_presence_of :user_id, :country, :city, :town, :lat, :lng
+    validates_presence_of :user_id, :lat, :lng
 end
