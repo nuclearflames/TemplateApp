@@ -12,18 +12,19 @@
     </div>
 </div>
 <% @sentmessages.each do |f|%>
-    <div class="row read-<%= f.read %>">
+    <div class="row read-<%= find_status(f) %>">
         <div class="col-sm-4">
             <p><%= link_to get_user(f.user_id).alias, get_user(f.user_id).alias %></p>
             <p>Status: <span class="status"><%= find_status(f) %></span></p>
             <p>Sent on: <%= f.created_at.strftime("%Y-%m-%d %H:%M:%S") %></p>
         </div>
         <div class="col-sm-8 message-content">
-            <p><%= link_to f.title %></p>
-            <p><%= f.content %></p>
-            <p><%= link_to "Delete", message_path(f), method: :delete, data: {:confirm => "are you sure?"} %></p>
+            <p><span class="visible-xs">Title:</span> <%= link_to f.title, :controller => "messages", :action => "show", :id => f.id %></p>
+            <p><span class="visible-xs">Description:</span> <%= f.content %></p>
+            <p><span class="visible-xs">Your actions:</span> <%= link_to "Delete", message_path(f), method: :delete, data: {:confirm => "are you sure?"} %></p>
         </div>
     </div>
+    <hr />
 <% end %>
 <%= no_results(@sentmessages, "sent messages").html_safe %>
 <div class="row">
