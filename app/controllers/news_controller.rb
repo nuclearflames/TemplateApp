@@ -2,7 +2,7 @@ class NewsController < ApplicationController
     before_filter :authenticate_user!
 
     def index
-        @news = User.find(current_user).news.page(params[:page])
+        @news = User.find(current_user).news.order("created_at DESC").page(params[:page])
         respond_to do |format|
             format.html { render :html => @news }
             format.json { render :json => @news.to_json(:include => :user) }
