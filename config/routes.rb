@@ -10,6 +10,7 @@ TemplateApp::Application.routes.draw do
   resources :photos
   resources :messages
   resources :sentmessages
+  resources :news
 
   get "root/home"
 

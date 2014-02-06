@@ -1,0 +1,45 @@
+<%= form_for @news do |f| %>
+    <% if !@news.errors.empty? %>
+        <div class="row">
+            <div class="col-md-12 errorBox">
+                <h4>Error report</h4>
+                <% @news.errors.each do |attribute, error| %>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <%= attribute %>
+                            <%= error %>
+                        </div>
+                    </div>
+                <% end %>
+            </div>
+        </div>
+    <% end %>
+    <div class="row">
+        <div class="col-md-12">
+            <%= f.label :title %>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <%= f.text_field :title, :placeholder => "Title" %>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <%= f.label :description %>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <%= f.text_area :description, :placeholder => "Description" %>
+            <script>
+                CKEDITOR.replace('news_description')
+            </script>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <%= f.submit :class => "flat-rounded-button" %>
+        </div>
+    </div>
+<% end %>
