@@ -2,6 +2,21 @@
     <div class="col-md-12 posts-new-container">
         <%= form_for @post do |f| %>
             <%= f.hidden_field(:topic_id, :value => params[:id].to_i) %>
+            <% if !@post.errors.empty? %>
+                <div class="row">
+                    <div class="col-md-12 errorBox">
+                        <h4>Error report</h4>
+                        <% @post.errors.each do |attribute, error| %>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <%= attribute %>
+                                    <%= error %>
+                                </div>
+                            </div>
+                        <% end %>
+                    </div>
+                </div>
+            <% end %>
             <div class="row">
                 <div class="col-md-12">
                     <h3>Create new post</h3>

@@ -32,6 +32,24 @@ class ForumsController < ApplicationController
         @topics = Forum.find(params[:id]).topics.page(params[:page])
     end
 
+    def edit
+        @forum = Forum.find(params[:id])
+    end
+
+    def update
+        @forum = Forum.find(params[:id])
+
+            respond_to do |format|
+            if @forum.update_attributes(params[:forum])
+                format.html { redirect_to(@forum, :notice => 'Forum was successfully updated.') }
+                format.xml  { head :ok }
+            else
+                format.html { render :action => "edit" }
+                format.xml  { render :xml => @forum.errors, :status => :unprocessable_entity }
+            end
+        end
+    end
+
     def destroy
         @forum = Forum.find(params[:id])
         @forum.destroy
