@@ -1,5 +1,20 @@
 <%= form_for @topic do |f| %>
     <%= f.hidden_field(:forum_id, :value => params[:id].to_i) %>
+    <% if !@topic.errors.empty? %>
+        <div class="row">
+            <div class="col-md-12 errorBox">
+                <h4>Error report</h4>
+                <% @topic.errors.each do |attribute, error| %>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <%= attribute %>
+                            <%= error %>
+                        </div>
+                    </div>
+                <% end %>
+            </div>
+        </div>
+    <% end %>
     <div class="row">
         <div class="col-sm-6 title">
             <%= f.label :title %>
