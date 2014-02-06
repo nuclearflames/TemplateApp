@@ -8,6 +8,7 @@ class RootController < ApplicationController
     end
 
     def userhome
+        @news = User.find(current_user).news.page(params[:page])
         @posts = User.find(current_user).posts("created_at desc").page(params[:page]).per(5)
         @pointer = true
     end

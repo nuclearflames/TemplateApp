@@ -171,3 +171,14 @@ input, textarea {
         background-color: $error;
     }
 }
+
+.options {
+    form {
+        display: inline-block;
+        input[type="submit"] {
+            border: 0px;
+            text-decoration: underline;
+            font-size: 1.4em;
+        }
+    }
+}

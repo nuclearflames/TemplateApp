@@ -1,0 +1,2 @@
+<span>Your available actions:</span>
+<span><%= button_to "Delete", news_path(news), method: :delete, data: {:confirm => "are you sure?"} %> | <%= link_to "Edit", edit_news_path(news) %></span>
