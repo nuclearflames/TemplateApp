@@ -61,15 +61,9 @@
                         <% end %>
                     </div>
                     <div class="row">
-                        <%= link_to "/users/sign_out", :class => "col-sm-12", :method => :delete do %>
-                            <i class="fa fa-sign-out fa-2x"></i>
-                            <span>Logout</span>
-                        <% end %>
+                        <%= button_to "Logout", "/users/sign_out", :method => :delete, :class => "col-sm-12" %>
                     <% else %>
-                        <%= link_to "/users/sign_in", :class => "col-sm-12" do %>
-                            <i class="fa fa-sign-in fa-2x"></i>
-                            <span>Login</span>
-                        <% end %>
+                        <%= button_to "Sign In", "/users/sign_in", :class => "col-sm-12" %>
                     <% end %>
                 </div>
             </div>

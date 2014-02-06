@@ -75,9 +75,11 @@ input, textarea {
         &:first-child {
             display: block;
         }
-        a {
+        a, input[type="submit"] {
             padding: 10px 0;
             width: 100%;
+            background-color: initial;
+            border: initial;
         }
         &:first-child, &:last-child {
             &:after {
