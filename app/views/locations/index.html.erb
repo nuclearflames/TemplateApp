@@ -1,23 +1,54 @@
 <div class="row">
-    <div class="col-sm-12">
-        <h1>All of our members profiles</h1>
+    <div class="col-sm-6">
+        <div class="row">
+            <div class="col-sm-12">
+                <h1>All of our members profiles</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <%= link_to "Update your location details", new_location_path %>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="row">
+            <div class="col-sm-12">
+                <h5>Your Location:</h5>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <p>Lat: <span id="lat"><%= current_user.location.lat %></span>, Lng: <span id="lng"><%= current_user.location.lng %></span></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <p><%= current_user.location.town %></p>
+            </div>
+        </div>
     </div>
 </div>
 <div class="row">
     <div class="col-sm-12">
-        <%= link_to "Update your location details", new_location_path %>
+        <h4>Profile locations on a map</h4>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12 gMap">
+        <div id="locations-map-index" class="maps"></div>
     </div>
 </div>
 <div class="row">
     <div class="col-sm-12">
-        <h4>Search by</h4>
+        <h4>Refine by</h4>
     </div>
 </div>
 
 <%= fields_for "search[params]" do |f| %>
     <div class="row">
-        <div class="col-sm-2 col-sm-offset-1">
-            <p>Distance:</p> <span id="near-distance"></span>km-<span id="far-distance"></span>km
+        <div class="col-sm-3 col-sm-offset-1">
+            <p>Distance:</p> <span id="near-distance">0</span>km - <span id="far-distance">50</span>km
         </div>
         <div class="col-sm-7 col-sm-offset-1">
             <div id="distance-slider" class="slider"></div>
@@ -29,9 +60,9 @@
         <h2>User profiles</h2>
     </div>
 </div>
-<div class="row">
+<div class="row" id="users">
     <% @users.each do |f|%>
-        <div class="col-sm-3 index-wrapper">
+        <div class="col-sm-3 index-wrapper" id="<%= f.alias %>">
             <div class="row">
                 <div class="col-sm-12 locationOverlayText">
                     <h4><%= link_to f.alias, "/" + f.alias %></h4>
@@ -51,8 +82,3 @@
     <% end %>
 </div>
 <%= no_results(@users, "users").html_safe %>
-<div class="row">
-    <div class="col-sm-12 gMap">
-        <div id="locations-map-index" class="maps"></div>
-    </div>
-</div>
