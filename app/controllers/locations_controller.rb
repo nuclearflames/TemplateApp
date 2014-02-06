@@ -7,10 +7,23 @@ class LocationsController < ApplicationController
         @location = Location.new
     end
     def index
-        if params[:name]
+        if User.find(current_user).location == nil
+            redirect_to(:controller => 'locations', :action => 'new')
+            flash[:notice] = "You are required to input your location before you can view others"
+        elsif params[:name]
             redirect_to(:controller => "root", :action => "show", :alias => params[:name])
         else
-            @users =  User.joins(:location).all
+            if params[:alias1]
+                @users = []
+                params.each do |key, value|
+                    user =  User.find_by_alias(value)
+                    if user != nil
+                        @users << user
+                    end
+                end
+            else
+                @users =  User.joins(:location).all
+            end
             respond_to do |format|
                 format.html { render :html => @users }
                 format.json { render :json => @users.to_json(:include => :location) }
@@ -44,7 +57,7 @@ class LocationsController < ApplicationController
         respond_to do |format|
             if @location.save
                 format.html { redirect_to(:controller => 'root', :action => 'userhome' )}
-                flash[:notice] = 'Location was successfully created.'
+                flash[:notice] = 'Location was successfully input.'
             else
                 format.html { render :action => "new" }
                 format.xml  { render :xml => @location.errors, :status => :unprocessable_entity }
