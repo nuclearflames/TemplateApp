@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-sm-12">
-        <h2>Edit <%= resource_name.to_s.humanize %></h2>
+        <h2>Edit <%= resource_name.to_s.humanize %> Account</h2>
     </div>
 </div>
 <div class="row">
@@ -21,86 +21,108 @@
                     </div>
                 </div>
             <% end %>
-            <div class="row">
-                <div class="col-sm-6">
-                    <%= f.label :email %>
-                </div>
-                <div class="col-sm-6">
-                    <%= f.email_field :email, :autofocus => true %>
-                </div>
-            </div>
-            <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+            <div class="profile-accordian">
                 <div class="row">
                     <div class="col-sm-12">
-                        <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+                        <%= f.label :email %>
                     </div>
                 </div>
-            <% end %>
-            <div class="row">
-                <div class="col-sm-6">
-                    <%= f.label :password %>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <%= f.email_field :email, :autofocus => true %>
+                    </div>
+                    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+                            </div>
+                        </div>
+                    <% end %>
                 </div>
-                <div class="col-sm-6">
-                    <%= f.password_field :password, :autocomplete => "off" %>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <p>Change Password</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <%= f.password_field :password, :autocomplete => "off", :placeholder => "Password" %>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <%= f.label :password_confirmation %>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <%= f.password_field :password_confirmation, :placeholder => "Password Confirmation" %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <p><%= f.label :forename %></p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <%= f.text_field :forename, :placeholder => "Forename" %>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <p><%= f.label :surname %></p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <%= f.text_field :surname, :placeholder => "Surname" %>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <p><%= f.label :alias %></p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <%= f.text_field :alias, :placeholder => "Alias" %>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <p><%= f.label :aboutme %></p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <%= f.text_area :aboutme, :placeholder => "About Me" %>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <%= f.label :avatar %>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <%= f.file_field :avatar, :placeholder => "Avatar" %>
+                    </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-sm-6">
-                    <%= f.label :password_confirmation %>
+            <div class="row submit">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <p><%= f.label "Verfication Password" %></p>
+                    </div>
+                    <div class="col-sm-6">
+                        <%= f.password_field :current_password, :placeholder => "Current Password" %>
+                    </div>
                 </div>
-                <div class="col-sm-6">
-                    <%= f.password_field :password_confirmation %>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-6">
-                    <p><%= f.label :forename %></p>
-                </div>
-                <div class="col-sm-6">
-                    <%= f.text_field :forename %>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-6">
-                    <p><%= f.label :surname %></p>
-                </div>
-                <div class="col-sm-6">
-                    <%= f.text_field :surname %>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-6">
-                    <p><%= f.label :alias %></p>
-                </div>
-                <div class="col-sm-6">
-                    <%= f.text_field :alias %>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-6">
-                    <p><%= f.label :aboutme %></p>
-                </div>
-                <div class="col-sm-6">
-                    <%= f.text_area :aboutme %>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-6">
-                    <%= f.label :avatar %>
-                </div>
-                <div class="col-sm-6">
-                    <%= f.file_field :avatar %>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-6">
-                    <p><%= f.label :current_password %></p>
-                </div>
-                <div class="col-sm-6">
-                    <%= f.password_field :current_password %>
-                </div>
-            </div>
-            <div class="row">
                 <div class="col-sm-12">
                     <%= f.submit "Update", :class => "flat-rounded-button" %>
                 </div>

@@ -1,5 +1,13 @@
 $(function () {
     var 
+
+        profileAccordian = function () {
+            var accord = $(".profile-accordian");
+            accord.accordion({
+                heightStyle: "content",
+                collapsible: true
+            });
+        },
         imageSlider = function () {
             $("#image-slider-profile").slidesjs({
                 width: 225,
@@ -54,6 +62,9 @@ $(function () {
         init = function() {
             $(window).load(function () {
                 infiniteScroll();
+                responsiveMenu();
+                imageSlider();
+                profileAccordian();
             });
             $(window).resize(function () {
                 infiniteScroll();

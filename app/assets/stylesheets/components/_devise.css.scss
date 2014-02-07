@@ -1,20 +1,19 @@
 .user-yield {
     form {
+        .profile-accordian {
+            margin: 20px 0;
+        }
         .row {
             line-height: 30px;
             input[type="submit"] {
                 margin: 10px;
             }
-        }
-        .row:nth-child(even) {
-        	background-color: $sea;
-        }
-        .row {
-            .col-sm-6:nth-child(even) {
-                background-color: $sea;
-                input {
-                    margin: 4px auto;
-                }
+            input {
+                margin: 5px 0;
+            }
+            textarea {
+                height: 150px;
+                resize: horizontal;
             }
         }
     }
