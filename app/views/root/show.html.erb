@@ -2,47 +2,53 @@
     <div class="col-md-4">
         <div class="row">
             <div class="col-md-12">
+                <h2><%= @user.alias %></h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
                 <%= image_tag @user.avatar(:medium) %>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <p>
+                    <a>
+                        <%= link_to "Send me a message", new_message_path(:alias => @user.alias) %>
+                    </a>
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
                 <% if @user === current_user %>
                     <div class="profile-options">
-                        <h3>Your settings:</h3>
+                        <h3>Profile options:</h3>
                         <p><%= link_to "Edit your profile", edit_user_registration_path %></p>
                     </div>
                 <% end %>
             </div>
         </div>
     </div>
-    <div class="col-md-8">
+    <div class="col-md-5">
         <div class="row">
-            <div class="col-md-8">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h2><%= @user.alias %></h2>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <p><a><%= link_to "Send me a message", new_message_path(:alias => @user.alias) %></a></p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <p><%= @user.email %></p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <p><%= @user.aboutme %></p>
-                    </div>
-                </div>
+            <div class="col-md-12">
+                <p><%= @user.email %></p>
+                <hr />
             </div>
-            <div class="col-md-4">
-                <div id="image-slider-profile">
-                    <% @user.photos.each do |f|%>
-                        <%= image_tag f.picture(:medium) %>
-                    <% end %>
-                </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <p><%= @user.aboutme %></p>o
+                <hr />
             </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div id="image-slider-profile">
+            <% @user.photos.each do |f|%>
+                <%= image_tag f.picture(:medium) %>
+            <% end %>
         </div>
     </div>
 </div>
