@@ -30,10 +30,11 @@
         .bubble {
             display: block;
             min-width: 50%;
-            max-width: 70%
+            max-width: 60%;
+            word-break: break-word;
         }
         .title, .description {
-            min-width: 50%;
+            width: 100%;
         }
         .alias {
             bottom: 0px;
@@ -141,6 +142,7 @@
     }
     .posts-new {
         background-color: $pills;
+        padding: 20px 0;
         .row {
             background-color: transparent;
             padding: 0;
