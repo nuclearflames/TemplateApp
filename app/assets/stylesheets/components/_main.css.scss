@@ -58,6 +58,12 @@ input, textarea {
     border: 1px solid $storm;
 }
 
+.fa-spinner {
+    -moz-animimation: spin 2s infinite linear;
+    -webkit-animation: spin 2s infinite linear;
+    animation: spin 2s infinite linear;
+}
+
 #sidebar {
     margin: 0px;
     text-align: center;
