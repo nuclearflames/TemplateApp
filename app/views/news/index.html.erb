@@ -2,6 +2,7 @@
     <div class="col-sm-12">
         <h1>Latest News</h1>
         <p>Here you can create the news (and view it)</p>
+        <p><%= link_to "Create new news", new_news_path %></p>
     </div>
 </div>
 <div class="row" id="news-wrapper">
@@ -28,11 +29,10 @@
             <hr />
         </div>
     <% end %>
-    <div id="news-index-scroller"></div>
 </div>
 <%= no_results(@news, "news reports").html_safe %>
 <div class="row footer">
     <div class="col-sm-12">
-        <p><%= link_to "Create new news", new_news_path %></p>
+        <div id="news-index-scroller"></div>
     </div>
 </div>
