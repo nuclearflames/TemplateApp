@@ -78,6 +78,9 @@ TemplateApp::Application.routes.draw do
   match "/search/new" => "locations#new"
   match "/search/show" => "locations#show", :as => :user
   match "/topics/latest/:alias" => "topics#latest"
+  match "/friends/confirm" => "friends#confirm"
+  match "/friends/deny" => "friends#deny"
+  match "/friends/:alias" => "friends#create"
 
   #place at end to last search profiles
   match "/:alias" => "root#show#:alias"

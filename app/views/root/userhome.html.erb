@@ -2,24 +2,45 @@
 	<div class="col-sm-9">
         <div class="row">
             <div class="col-sm-12">
-                <h4><%= global_website_name %></h4>
+                <h2><%= current_user.alias %></h2>
+                <hr />
             </div>
         </div>
         <div class="row">
             <div class="col-sm-12">
-                <h4><%= global_website_name %></h4>
-                <h4>Friends Online</h4>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h4>Your Friends</h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <% @user.friends.each do |f| %>
+                            <% if f.confirmed %>
+                                <p><%= f.id_as_alias %></p>
+                                <p><%= link_to f.id_as_alias %></p>
+                                <p><%= link_to "Remove friend", :controller => "friends", :action => "deny", :id => f.id %></p>
+                            <% else %>
+                                <p><%= link_to f.id_as_alias %></p>
+                                <p><%= link_to "Confirm Friend ", :controller => "friends", :action => "confirm", :id => f.id %></p>
+                                <p><%= f.confirmed %></p>
+                            <% end %>
+                        <% end %>
+                        <hr />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
                 <h4>Upcoming Events</h4>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-12">
-                <p><%= link_to "Your news", "news" %></p>
+                <hr />
             </div>
         </div>
         <div class="row">
             <div class="col-sm-12 news">
                 <%= render :template => "news/index/", :news => @news %>
+                <hr />
             </div>
         </div>
 	</div>
@@ -32,6 +53,7 @@
         <div class="row">
             <div class="col-sm-12">
                 <p><%= link_to "View forums", forums_path %></p>
+                <hr />
             </div>
         </div>
 	</div>

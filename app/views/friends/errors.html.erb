@@ -1,0 +1,16 @@
+
+    <% if !@friend.errors.empty? %>
+        <div class="row">
+            <div class="col-md-12 errorBox">
+                <h4>Error report</h4>
+                <% @friend.errors.each do |attribute, error| %>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <%= attribute %>
+                            <%= error %>
+                        </div>
+                    </div>
+                <% end %>
+            </div>
+        </div>
+    <% end %>

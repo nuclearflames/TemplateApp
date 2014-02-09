@@ -5,7 +5,17 @@
                 <div class="col-md-12">
                     <div class="profile-options">
                         <h3>Profile options:</h3>
-                        <p><%= link_to "Edit your profile", edit_user_registration_path %></p>
+                        <p><%= link_to "Edit my profile", edit_user_registration_path %></p>
+                        <hr />
+                    </div>
+                </div>
+            </div>
+        <% else %>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="profile-options">
+                        <h3>Profile options:</h3>
+                        <p><%= link_to "Add friend", "friends/" + @user.alias %>
                         <hr />
                     </div>
                 </div>
@@ -55,7 +65,7 @@
         </div>
         <div class="row">
             <div class="col-md-12">
-                <p><%= @user.aboutme %></p>o
+                <p><%= @user.aboutme %></p>
                 <hr />
             </div>
         </div>
