@@ -22,8 +22,15 @@
                                 <p><%= link_to "Remove friend", :controller => "friends", :action => "deny", :id => f.id %></p>
                             <% else %>
                                 <p><%= link_to f.id_as_alias %></p>
+                                <% if f.user_id != current_user.id %>
+                                    <p><%= link_to "Confirm Friend ", :controller => "friends", :action => "confirm", :id => f.id %></p>
+                                <% end %>
+                            <% end %>
+                        <% end %>
+                        <% @unconfirmedusers.each do |f| %>
+                            <%= f.user_id_as_alias %>
+                            <% if f.user_id != current_user.id %>
                                 <p><%= link_to "Confirm Friend ", :controller => "friends", :action => "confirm", :id => f.id %></p>
-                                <p><%= f.confirmed %></p>
                             <% end %>
                         <% end %>
                         <hr />

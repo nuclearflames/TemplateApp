@@ -10,6 +10,7 @@ class RootController < ApplicationController
     def userhome
         @news = User.find(current_user).news.page(params[:page])
         @posts = User.find(current_user).posts("created_at desc").page(params[:page]).per(5)
+        @unconfirmedusers = Friend.where(:friend_id => current_user.id, :confirmed => false)
         @pointer = true
     end
 
