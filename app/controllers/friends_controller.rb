@@ -46,7 +46,13 @@ class FriendsController < ApplicationController
 
     def deny
         @friend = Friend.find(params[:id])
-        @friend.destroy
+
+        @friend2 = Friend.where(:friend_id=>@friend.user_id).where(:user_id=>@friend.friend_id).first
+
+        ActiveRecord::Base.transaction do
+            @friend.destroy
+            @friend2.destroy
+        end
 
         redirect_to :controller => "root", :action => "userhome"
         flash[:notice] = 'Friendship removed.'

@@ -47,7 +47,7 @@
     }
     .reply-false {
         .title, .description {
-            background-color: $storm;
+            background-color: $pond;
         }
         text-align: left;
         .bubble {
@@ -75,7 +75,7 @@
                 position: absolute;
                 border-style: solid;
                 border-width: 20px 0 0 20px;
-                border-color: transparent transparent transparent $storm;
+                border-color: transparent transparent transparent $pond;
             }
             &:before {
                 content: " ";
@@ -141,7 +141,7 @@
         //background-color: $mist;
     }
     .posts-new {
-        background-color: $pills;
+        background-color: $wading;
         padding: 20px 0;
         .row {
             background-color: transparent;

@@ -16,18 +16,22 @@
         </div>
     <% end %>
     <div class="row">
-        <div class="col-sm-6 title">
+        <div class="col-sm-12 title">
             <%= f.label :title %>
         </div>
-        <div class="col-sm-6 description">
+    </div>
+    <div class="row">
+        <div class="col-sm-12 input">
+            <%= f.text_field :title, :placeholder => "title" %>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12 description">
             <%= f.label :description %>
         </div>
     </div>
     <div class="row">
-        <div class="col-sm-6 input">
-            <%= f.text_field :title, :placeholder => "title" %>
-        </div>
-        <div class="col-sm-6 description">
+        <div class="col-sm-12 description">
             <%= f.text_area :description, :placeholder => "description" %>
         </div>
     </div>

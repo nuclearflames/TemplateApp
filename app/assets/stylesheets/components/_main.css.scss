@@ -11,6 +11,7 @@ body {
     margin: 0;
     background-color: $white;
     color: $maelstrom;
+    text-align: center;
 }
 
 a {
@@ -104,19 +105,17 @@ input, textarea {
             display: block;
         }
     }
-}
-
-#sidebar, #content {
-    background-color: $white;
-    border-radius: 0 0 5px 0;
+    .menu {
+        border-bottom: 1px solid $water;
+    }
 }
 
 .main-title, .main-information {
     padding: 20px 0;
+    background-color: $pond;
 }
 
 .main-title {
-    background-color: $pond;
     text-align: center;
     z-index: 4;
     a {
@@ -134,7 +133,6 @@ input, textarea {
 
 .main-yield {
     z-index: 3;
-    text-align: center;
     padding: 20px 0;
     a {
         font-size: 1.4em;
@@ -142,32 +140,39 @@ input, textarea {
 }
 
 #content, #sidebar {
-    -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 1), 0 0 40px rgba(0, 0, 0, 0.3) inset;
-    -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 1), 0 0 40px rgba(0, 0, 0, 0.3) inset;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 1), 0 0 40px rgba(0, 0, 0, 0.3) inset;
+    -webkit-box-shadow: 0 1px 3px $shadow, 0 0 40px $shadow inset;
+    -moz-box-shadow: 0 1px 3px $shadow, 0 0 40px $shadow inset;
+    box-shadow: 0 1px 3px $shadow, 0 0 40px $shadow inset;
+    background-color: $white;
+    border-radius: 0 0 5px 0;
     &:before, &:after {
         content:"";
-        position:absolute;
-        z-index:-1;
-        top: 0;
-        bottom: 0;
-        left: 10px;
-        right: 10px;
+        z-index: -1;
+        position: absolute;
+        content: "";
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
     }
     &:after {
+        z-index: -1;
+        position: absolute;
+        content: "";
+        bottom: 15px;
         right: 10px;
         left: auto;
-        -webkit-transform: skew(8deg) rotate(3deg);
-        -moz-transform: skew(8deg) rotate(3deg);
-        -ms-transform: skew(8deg) rotate(3deg);
-        -o-transform: skew(8deg) rotate(3deg);
-        transform: skew(8deg) rotate(3deg);
+        width: 50%;
+        top: 80%;
+        background: $shadow;
+        -webkit-box-shadow: 0 15px 10px $shadow;
+        -moz-box-shadow: 0 15px 10px $shadow;
+        box-shadow: 0 15px 10px $shadow;
+        -webkit-transform: rotate(3deg);
+        -moz-transform: rotate(3deg);
+        -o-transform: rotate(3deg);
+        -ms-transform: rotate(3deg);
+        transform: rotate(3deg);
     }
-}
-
-.main-information {
-    text-align: center;
-    background-color: $pills;
 }
 
 .errorBox {
@@ -187,4 +192,10 @@ input, textarea {
             font-size: 1.4em;
         }
     }
+}
+
+.notice {
+    background-color: $notice;
+    padding: 20px 0;
+    text-align: center;
 }

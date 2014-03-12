@@ -15,18 +15,22 @@
         </div>
     <% end %>
     <div class="row">
-        <div class="col-md-6 title">
+        <div class="col-md-12 title">
             <%= f.label :title %>
         </div>
-        <div class="col-md-6 description">
+    </div>
+    <div class="row">
+        <div class="col-md-12 input">
+            <%= f.text_field :title, :placeholder => "Title" %>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 description">
             <%= f.label :description %>
         </div>
     </div>
     <div class="row">
-        <div class="col-md-6 input">
-            <%= f.text_field :title, :placeholder => "Title" %>
-        </div>
-        <div class="col-md-6 description">
+        <div class="col-md-12 description">
             <%= f.text_area :description, :placeholder => "Description" %>
         </div>
     </div>
