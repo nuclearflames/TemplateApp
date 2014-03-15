@@ -87,6 +87,10 @@ input, textarea {
             width: 100%;
             background-color: initial;
             border: initial;
+            text-decoration: none;
+            span {
+                text-decoration: underline;
+            }
         }
         &:first-child, &:last-child {
             &:after {
