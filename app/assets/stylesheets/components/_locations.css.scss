@@ -1,14 +1,16 @@
 .locations {
     .maps {
         height: 500px;
+        z-index: 0;
     }
 
     .index-wrapper {
-        border: 1px solid $seabreeze;
-        padding: 10px 0;
         min-height: 175px;
         img {
             max-width: 80px;
+        }
+        &:nth-child(odd) {
+            background-color: $ocean;            
         }
     }
     .gMap {

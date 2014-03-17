@@ -149,7 +149,10 @@ input, textarea {
     box-shadow: 0 1px 3px $shadow, 0 0 40px $shadow inset;
     background-color: $white;
     border-radius: 0 0 5px 0;
-    &:before, &:after {
+/*    &:before, &:after {
+        -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 1), 0 0 40px rgba(0, 0, 0, 0.3) inset;
+        -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 1), 0 0 40px rgba(0, 0, 0, 0.3) inset;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 1), 0 0 40px rgba(0, 0, 0, 0.3) inset;
         content:"";
         z-index: -1;
         position: absolute;
@@ -177,6 +180,12 @@ input, textarea {
         -ms-transform: rotate(3deg);
         transform: rotate(3deg);
     }
+        -webkit-transform: skew(8deg) rotate(3deg);
+        -moz-transform: skew(8deg) rotate(3deg);
+        -ms-transform: skew(8deg) rotate(3deg);
+        -o-transform: skew(8deg) rotate(3deg);
+        transform: skew(8deg) rotate(3deg);
+    }*/
 }
 
 .errorBox {
