@@ -1,10 +1,43 @@
 .news {
-	.title, .description, .options {
-		text-align: right;
-		border-bottom: 1px solid $water;
-		padding: 5px 0;
+	input[type="submit"] {
+		background-color: initial;
+		border: 0;
+	}
+	.news-object {
+		background-color: $ocean;
+		margin-top: 5px;
+		margin-bottom: 5px;
+		&:hover {
+			.edit-options {
+				display: inherit;
+				opacity: 1;
+			}
+		}
+		.row {
+			text-align: right;
+			padding: 5px;
+			img {
+				height: 50px;
+			}
+			form {
+				display: inline-block;
+			}
+		}
+	}
+	.poster {
+		a {
+			vertical-align: bottom;
+		}
 	}
 	.preload-hidden {
 		display: none;
+	}
+	.edit-options {
+		-webkit-transition: all 1s ease-in;
+		-moz-transition: all 1s ease-in;
+		-o-transition: all 1s ease-in;
+		transition: all 1s ease-in;
+		display: table-column;
+		opacity: 0;
 	}
 }

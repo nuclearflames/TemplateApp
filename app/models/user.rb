@@ -16,7 +16,7 @@ class User < ActiveRecord::Base
     # Setup accessible (or protected) attributes for your model
     attr_accessible :email, :password, :password_confirmation, :remember_me, :forename, :surname, :aboutme, :alias, :birthday, :avatar
 
-    has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/assets/defaults/profile-default.jpg"
+    has_attached_file :avatar, :styles => { :small => "100x100>", :thumb => "50x50" }, :default_url => "/assets/defaults/profile-default.jpg"
 
     # attr_accessible :title, :body
 
@@ -30,7 +30,7 @@ class User < ActiveRecord::Base
         self.avatar.url(:thumb)
     end
 
-    def avatar_url_meduim
+    def avatar_url_medium
         self.avatar.url(:medium)
     end
 end
