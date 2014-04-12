@@ -8,12 +8,16 @@ class LocationsController < ApplicationController
     end
     def index
         if User.find(current_user).location == nil
+            #Cant use location feature, no data entered themselves
             redirect_to(:controller => 'locations', :action => 'new')
             flash[:notice] = "You are required to input your location before you can view others"
         elsif params[:name]
+            #show persons data
             redirect_to(:controller => "root", :action => "show", :alias => params[:name])
         else
+            #Render map
             if params[:alias1]
+                #render page
                 @users = []
                 params.each do |key, value|
                     user =  User.find_by_alias(value)
@@ -22,11 +26,12 @@ class LocationsController < ApplicationController
                     end
                 end
             else
-                @users =  User.joins(:location).all
+                #format json data as there is no alias1
+                @users = User.all
             end
             respond_to do |format|
                 format.html { render :html => @users }
-                format.json { render :json => @users.to_json(:include => :location) }
+                format.json { render :json => @users.to_json( { :methods => [:avatar_url_thumb], :include => [:location] } ) }
             end
         end
     end

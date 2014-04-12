@@ -76,10 +76,15 @@
             </div>
             <div class="col-sm-10" id="content">
                 <div class="row main-title">
+                    <div class="col-sm-2">
+                        <% if (current_user) %>
+                            <%= image_tag current_user.avatar.url(:thumb) %>
+                    <% end %>
+                    </div>
                     <div class="col-sm-4">
                         <h1><%= global_website_name_linked %></h1>
                     </div>
-                    <div class="col-sm-6 slideshow">
+                    <div class="col-sm-4 slideshow">
                         <span>Slideshow</span>
                     </div>
                 </div>
