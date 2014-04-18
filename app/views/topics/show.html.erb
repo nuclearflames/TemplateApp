@@ -32,6 +32,7 @@
                 </div>
                 <div class="col-sm-3 alias">
                     <span><%= f.created_at %><%= link_to get_user(f.user_id).alias, "/" + get_user(f.user_id).alias %></span>
+                    <%= image_tag get_user(f.user_id).avatar_url_thumb %>
                 </div>
             </div>
         </div>

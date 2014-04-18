@@ -37,8 +37,9 @@
             width: 100%;
         }
         .alias {
-            bottom: 0px;
-            position: absolute;
+            top: 0px;
+            position: relative;
+            text-align: center;
             a {
                 word-break: break-word;
                 display: block;
@@ -54,7 +55,6 @@
             float: left;
         }
         .alias {
-            text-align: right;
             right: 0px;
         }
         .title {
@@ -97,8 +97,8 @@
             float: right;
         }
         .alias {
-            text-align: left;
             left: 0px;
+            float: right;
         }
         .title {
             float: right;
