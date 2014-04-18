@@ -21,7 +21,7 @@ class PhotosController < ApplicationController
         respond_to do |format|
             if @photo.save
                 flash[:notice] = 'Photo was successfully created.'
-                format.html { redirect_to(photo_path(@photo.user_id))}
+                format.html { redirect_to(photo_path(@photo))}
             else
                 format.html { render :action => "new" }
                 format.xml  { render :xml => @photo.errors, :status => :unprocessable_entity }
