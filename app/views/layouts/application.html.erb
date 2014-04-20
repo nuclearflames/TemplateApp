@@ -88,10 +88,17 @@
                         <span>Slideshow</span>
                     </div>
                 </div>
-                <% if notice %>
+                <% if flash[:notice] %>
                     <div class="row">
                         <div class="col-sm-12 notice">
-                            <%= notice %>
+                            <%= flash[:notice] %>
+                        </div>
+                    </div>
+                <% end %>
+                <% if flash[:alert] %>
+                    <div class="row">
+                        <div class="col-sm-12 alert">
+                            <%= flash[:alert] %>
                         </div>
                     </div>
                 <% end %>

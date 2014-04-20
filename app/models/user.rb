@@ -18,13 +18,17 @@ class User < ActiveRecord::Base
 
     has_attached_file :avatar, :styles => { :small => "100x100>", :thumb => "50x50" }, :default_url => "/assets/defaults/profile-default.jpg"
 
+    validates_attachment_content_type :avatar, :content_type => ["image/jpg", "image/gif", "image/png"], :message => "File must be of type .png, .jpg, .gif"
+
+    validates_attachment_size :avatar, :less_than => 1.megabyte, :message => "File must be smaller than 1 megabyte"
+
     # attr_accessible :title, :body
 
-    validates_presence_of :alias, :email, :password, :password_confirmation, :on => :create
+    validates_presence_of :alias, :email, :password, :password_confirmation, :on => :create, :message => "Alias, email, password and password confirmation required"
 
-    validates_presence_of :alias, :email, :password_confirmation, :on => :edit
+    validates_presence_of :alias, :email, :current_password, :on => :edit, :message => "Alias, email and verification password required"
 
-    validates_uniqueness_of :alias
+    validates_uniqueness_of :alias, :message => "Alias already exists, please choose another"
 
     def avatar_url_thumb
         self.avatar.url(:thumb)
