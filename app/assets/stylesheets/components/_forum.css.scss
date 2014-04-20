@@ -12,6 +12,12 @@
         resize: vertical;
         height: 100px;
     }
+    .button_to {
+        display: inline-block;
+    }
+    input[type="submit"] {
+        background-color: inherit;
+    }
     #latest {
         .title {
             font-size: 1.2em;

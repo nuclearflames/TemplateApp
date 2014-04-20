@@ -27,6 +27,7 @@ a {
 
 input[type="submit"] {
     cursor: pointer;
+    border: 0px;
 }
 
 h2 {
@@ -55,12 +56,13 @@ ul {
 
 input, textarea {
     width: 90%;
-    border: 1px solid $darkMist;
+    margin-left: auto;
+    margin-right: auto;
     resize: none;
-    margin: 0 auto;
     padding: 10px;
-    background-color: $mist;
+    background-color: $wading;
     border: 1px solid $storm;
+    text-decoration: underline;
 }
 
 .fa-spinner {

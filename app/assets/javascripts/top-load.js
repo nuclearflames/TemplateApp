@@ -1,1 +1,2 @@
+
 //= require vendor/ckeditor/ckeditor

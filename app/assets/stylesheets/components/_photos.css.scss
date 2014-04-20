@@ -15,5 +15,8 @@
         background-color: $pills;
         min-height: 100%;
         width: 30%;
+        input[type="submit"] {
+            background-color: inherit;
+        }
     }
 }
