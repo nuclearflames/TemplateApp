@@ -10,33 +10,39 @@
 <body>
     <div class="container main">
         <div class="row">
-            <div class="col-xs-2" id="sidebar">
+            <div class="col-sm-2" id="sidebar">
                 <div class="row">
-                    <%= link_to "/", :class => "col-xs-12" do %>
+                    <%=link_to "", :class => "menu col-sm-12 visible-xs" do %>
+                        <i class="fa fa-list fa-2x"></i>
+                        <span>Menu</span>
+                    <% end %>
+                </div>
+                <div class="row">
+                    <%= link_to "/", :class => "col-sm-12" do %>
                         <i class="fa fa-home fa-2x"></i> 
                         <span>Home</span>
                     <% end %>
                 </div>
                 <div class="row">
-                    <%=link_to "/news", :class => "col-xs-12" do %>
+                    <%=link_to "/news", :class => "col-sm-12" do %>
                         <i class="fa fa-file-text fa-2x"></i>
                         <span>News</span>
                     <% end %>
                 </div>
                 <div class="row">
-                    <%= link_to "/photos", :class => "col-xs-12" do %>
+                    <%= link_to "/photos", :class => "col-sm-12" do %>
                         <i class="fa fa-picture-o fa-2x"></i>
                         <span>Photos</span>
                     <% end %>
                 </div>
                 <div class="row">
-                    <%= link_to "/forums", :class => "col-xs-12" do %>
+                    <%= link_to "/forums", :class => "col-sm-12" do %>
                         <i class="fa fa-users fa-2x"></i>
                         <span>Forums</span>
                     <% end %>
                 </div>
                 <div class="row">
-                    <%= link_to "/search", :class => "col-xs-12" do %>
+                    <%= link_to "/search", :class => "col-sm-12" do %>
                         <i class="fa fa-search fa-2x"></i>
                         <span>Search</span>
                     <% end %>
@@ -71,13 +77,9 @@
             <div class="col-sm-10" id="content">
                 <div class="row main-title">
                     <div class="col-sm-2">
-                        <%= link_to "", :class => "menu col-xs-12 visible-xs", :id => "menu-button" do %>
-                            <i class="fa fa-list fa-2x"></i>
-                            <span>Menu</span>
-                        <% end %>
                         <% if (current_user) %>
                             <%= image_tag current_user.avatar.url(:thumb) %>
-                        <% end %>
+                    <% end %>
                     </div>
                     <div class="col-sm-4">
                         <h1><%= global_website_name_linked %></h1>
@@ -113,6 +115,9 @@
             </div>
         </div>
     </div>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+
     <script type="text/javascript"
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB3gx_9qaR1qczUh-vHg35EhzDYTtfwfNs&sensor=false">
     </script>
