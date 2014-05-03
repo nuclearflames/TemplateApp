@@ -19,12 +19,15 @@ $(function () {
         },
         responsiveMenu = function () {
             $("#sidebar").find(".menu").click(function (i) {
-                var val = $("#sidebar");
+                var val = $("#sidebar"),
+                    cont = $("#content");
                 i.preventDefault();
-                if ($("#sidebar.visible").length) {
-                    val.removeClass("visible");
+                if ($("#sidebar.sidebar-visible").length) {
+                    val.removeClass("sidebar-visible");
+                    cont.removeClass("sidebar-visible");
                 } else {
-                    val.addClass("visible");
+                    val.addClass("sidebar-visible");
+                    cont.addClass("sidebar-visible");
                 }
             });
         },

@@ -71,10 +71,22 @@ input, textarea {
     animation: spin 2s infinite linear;
 }
 
+.container {
+    overflow: hidden;
+}
+
+#content.sidebar-visible {
+    left: 25%;
+}
+
 #sidebar {
     margin: 0px;
     text-align: center;
     z-index: 5;
+    position: absolute;
+    span {
+        display: none;
+    }
     div {
         background-color: $pills;
         color: $white;
@@ -111,8 +123,9 @@ input, textarea {
             margin-right: auto;
         }
     }
-    &.visible {
-        div {
+    &.sidebar-visible {
+        width: 25%;
+        div, span {
             display: block;
         }
     }
@@ -156,43 +169,6 @@ input, textarea {
     box-shadow: 0 1px 3px $shadow, 0 0 40px $shadow inset;
     background-color: $white;
     border-radius: 0 0 5px 0;
-/*    &:before, &:after {
-        -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 1), 0 0 40px rgba(0, 0, 0, 0.3) inset;
-        -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 1), 0 0 40px rgba(0, 0, 0, 0.3) inset;
-        box-shadow: 0 1px 4px rgba(0, 0, 0, 1), 0 0 40px rgba(0, 0, 0, 0.3) inset;
-        content:"";
-        z-index: -1;
-        position: absolute;
-        content: "";
-        -webkit-box-shadow: none;
-        -moz-box-shadow: none;
-        box-shadow: none;
-    }
-    &:after {
-        z-index: -1;
-        position: absolute;
-        content: "";
-        bottom: 15px;
-        right: 10px;
-        left: auto;
-        width: 50%;
-        top: 80%;
-        background: $shadow;
-        -webkit-box-shadow: 0 15px 10px $shadow;
-        -moz-box-shadow: 0 15px 10px $shadow;
-        box-shadow: 0 15px 10px $shadow;
-        -webkit-transform: rotate(3deg);
-        -moz-transform: rotate(3deg);
-        -o-transform: rotate(3deg);
-        -ms-transform: rotate(3deg);
-        transform: rotate(3deg);
-    }
-        -webkit-transform: skew(8deg) rotate(3deg);
-        -moz-transform: skew(8deg) rotate(3deg);
-        -ms-transform: skew(8deg) rotate(3deg);
-        -o-transform: skew(8deg) rotate(3deg);
-        transform: skew(8deg) rotate(3deg);
-    }*/
 }
 
 .errorBox {
