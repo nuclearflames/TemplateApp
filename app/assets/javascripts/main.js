@@ -18,7 +18,7 @@ $(function () {
             });
         },
         responsiveMenu = function () {
-            $("#sidebar").find(".menu").click(function (i) {
+            $("#menu-button").click(function (i) {
                 var val = $("#sidebar"),
                     cont = $("#content");
                 i.preventDefault();

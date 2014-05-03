@@ -84,21 +84,17 @@ input, textarea {
     text-align: center;
     z-index: 5;
     position: absolute;
-    span {
-        display: none;
-    }
+    left: -25%;
     div {
         background-color: $pills;
         color: $white;
         transition: 0.25s;
-        z-index: 5;
-        display: none;
         &:hover {
             background-color: $water;
             color: $goldfish;
         }
         &:first-child {
-            display: block;
+            z-index: 5;
         }
         a, input[type="submit"] {
             padding: 10px 0;
@@ -111,7 +107,7 @@ input, textarea {
                 text-decoration: underline;
             }
         }
-        &:first-child, &:last-child {
+        &:last-child {
             &:after {
                 border: 0px;
             }
@@ -125,13 +121,12 @@ input, textarea {
     }
     &.sidebar-visible {
         width: 25%;
-        div, span {
-            display: block;
-        }
+        left: 0%;
     }
-    .menu {
-        border-bottom: 1px solid $water;
-    }
+}
+
+.menu {
+    text-align: left;
 }
 
 .main-title, .main-information {

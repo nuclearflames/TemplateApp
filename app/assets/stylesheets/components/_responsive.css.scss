@@ -15,16 +15,6 @@
     }
     #sidebar {
         position: initial;
-        .row, span {
-            display: block;
-            border-right: 1px solid $pond;
-            &:first-child {
-                border: 0px;
-            }
-            &:last-child {
-                border-radius: 0 0 5px 0;
-            }
-        }
     }
     .messages, .sentmessages {
         input, textarea {
