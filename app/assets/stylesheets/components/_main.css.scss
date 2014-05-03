@@ -75,8 +75,12 @@ input, textarea {
     overflow: hidden;
 }
 
-#content.sidebar-visible {
-    left: 25%;
+#content {
+    left: 0%;
+    &.sidebar-visible {
+        width: 100%;
+        left: 50%;
+    }
 }
 
 #sidebar {
@@ -84,11 +88,11 @@ input, textarea {
     text-align: center;
     z-index: 5;
     position: absolute;
-    left: -25%;
+    width: 50%;
+    left: -50%;
     div {
         background-color: $pills;
         color: $white;
-        transition: 0.25s;
         &:hover {
             background-color: $water;
             color: $goldfish;
@@ -120,9 +124,20 @@ input, textarea {
         }
     }
     &.sidebar-visible {
-        width: 25%;
+        width: 50%;
         left: 0%;
     }
+}
+
+#content, #sidebar {
+    -webkit-box-shadow: 0 1px 3px $shadow, 0 0 40px $shadow inset;
+    -moz-box-shadow: 0 1px 3px $shadow, 0 0 40px $shadow inset;
+    box-shadow: 0 1px 3px $shadow, 0 0 40px $shadow inset;
+
+    transition: left 0.5s ease-in;
+
+    background-color: $white;
+    border-radius: 0 0 5px 0;
 }
 
 .menu {
@@ -156,14 +171,6 @@ input, textarea {
     a {
         font-size: 1.4em;
     }
-}
-
-#content, #sidebar {
-    -webkit-box-shadow: 0 1px 3px $shadow, 0 0 40px $shadow inset;
-    -moz-box-shadow: 0 1px 3px $shadow, 0 0 40px $shadow inset;
-    box-shadow: 0 1px 3px $shadow, 0 0 40px $shadow inset;
-    background-color: $white;
-    border-radius: 0 0 5px 0;
 }
 
 .errorBox {

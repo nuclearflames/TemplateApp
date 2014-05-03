@@ -13,8 +13,20 @@
             margin: 10px;
         }
     }
+    #content {
+        width: 80%;
+        &.sidebar-visible {
+            left: initial;
+            width: 80%;
+        }
+    }
     #sidebar {
         position: initial;
+        width: 20%;
+        &.sidebar-visible {
+            width: 20%;
+            left: initial;
+        }
     }
     .messages, .sentmessages {
         input, textarea {
