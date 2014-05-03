@@ -126,6 +126,7 @@ input, textarea {
     &.sidebar-visible {
         width: 50%;
         left: 0%;
+        position: fixed;
     }
 }
 
